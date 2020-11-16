@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+.table_title h2 {
+	font-family: 'GmarketSansBold';
+	color: #444;
+	font-size: 8vw;
+	text-align: center;
+	margin: 3vw auto;
+}
+table {
+	width: 90%;
+	margin: 0 auto 8vw auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+th,td {
+	border: 0.2vw solid #444;
+	padding: 2vw;
+	font-size: 4vw;
+}
+th { 
+	font-family: 'GmarketSansLight';
+	width: 20vw;
+	background-color: #e8a761;
+	color: white;
+}
+td select {
+	font-family: 'GmarketSansLight';
+	width: 59.5vw;
+	color: #444; 
+	font-size: 2.5vw;
+	padding: 1vw;
+	-webkit-appearance: env();
+	-webkit-border-radius: 0;
+}
+td input { 
+	font-family: 'GmarketSansLight';
+	width: 58vw;
+	color: #444;
+	border-color: #444;
+	border: 0.2vw solid #444;
+	font-size: 3vw;
+	padding: 0.7vw;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+td input::placeholder {
+	font-family: 'GmarketSansLight';
+	color: #ccc;
+	text-align: center;
+}
+td input:focus {
+	box-shadow: none;
+}
+td input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+.btns {
+	font-family: 'GmarketSansLight';
+	border: 1px solid #444;
+	background-color: #e8a761;
+	color: white;
+	font-size: 5vw;
+	width: 25%;
+	text-align: center;
+	padding: 1% 0 0 0;
+	margin: 3%;
+	-webkit-appearance: none;
+	-webkit-border-radius: 1vw;
+	cursor: pointer;
+}
+
+/* 576px 이상 tablet */
+@media (min-width: 576px){
+	td input {
+		border: 0.2vw solid #444;
+	}
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	.table_title { margin-top: 32px; }
+	.table_title h2 { 
+		font-size: 70px;
+		margin: 40px 0; 
+	}
+	table { 
+		width: 800px; 
+		margin-bottom: 100px;
+	}
+	th,td {
+		border: 1px solid #444;
+	}
+	th { 
+		width: 123px;
+		font-size: 28px;
+		padding: 15px;
+	}
+	td { 
+		padding: 15px;
+		font-size: 0;
+		height: 80px;
+	}
+	td input { 
+		border: 1px solid #444;
+		font-size: 24px;
+		width: 570px;
+		padding: 10px;
+	}
+	td select {
+		width: 590px;
+		font-size: 24px;
+		padding: 10px;
+	}
+	.btns {
+		font-size: 36px;
+		padding: 8px 0 0 0;
+		margin: 3px;
+	}
+	
+}
+
+
+

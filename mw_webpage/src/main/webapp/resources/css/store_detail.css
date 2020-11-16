@@ -1,0 +1,570 @@
+@charset "UTF-8";
+
+.wrap-all {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.header_top {
+	display: flex;
+	justify-content: space-between;
+	margin: 3vw;
+}
+.info_title { width: 190vw; }
+.info_title h2 {
+	font-family: 'GmarketSansBold';
+	color: #e8a761;
+	font-size: 9vw;
+}
+
+.title_cat {
+	font-family: 'GmarketSansLight';
+	font-size: 4vw;
+	color: #777;
+}
+
+.info_title h5 {
+	font-family: 'GmarketSansLight';
+	color: #aaa;
+	font-size: 3vw;
+}
+
+.numbers {
+	font-family: 'GmarketSansLight';
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+}
+.numbers div {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0.8vw 0;
+}
+.numbers h5 {
+	padding-right: 0.5vw;
+	font-size: 3vw;
+	color: #777;margin: auto 0;
+}
+.numbers img { 
+    width: 3.5vw;
+    height: 3.5vw; 
+}
+
+.photos img {
+	width: 100vw;
+	height: 75vw;
+	object-fit: cover;
+	image-orientation: from-image;
+}
+
+.hashtag {
+	display: flex;
+	padding: 0 3vw;
+}
+
+.hash_item {
+	font-family: 'GmarketSansMedium';
+	padding: 2.5vw 4vw 2vw 4vw;
+	margin: 3vw 1vw;
+	text-align: center;
+	font-size: 3.5vw;
+	background-color: white;
+	color: #e8a761;
+	border: 1.5px solid #777;
+	border-radius: 10px;
+	-webkit-appearance: none;
+	-webkit-border-radius: 2vw;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.hash_item:hover {
+	background-color: #e8a761;
+	color: white;
+	border-color: #e8a761;
+}
+
+.brief {
+	display: flex;
+	justify-content: space-between;
+	padding: 3vw 9vw;
+}
+
+.brief_item {
+	padding: 1vw;
+	text-align: center;
+	margin: auto 0;
+	cursor: pointer;
+}
+
+.brief_item img {
+	width: 8vw;
+}
+
+.brief_item h5 {
+	font-family: 'GmarketSansLight';
+	text-align: center;
+	color: #444;
+	font-size: 4vw;
+	padding-top: 3vw;
+}
+
+.article_tab {
+	display: flex;
+	justify-content: space-between;
+	padding: 1vw 5vw;
+}
+
+.article_tab div {
+	font-family: 'GmarketSansBold';
+	padding: 1.5vw 8vw 1.5vw 4vw;
+	font-size: 4.5vw;
+	color: #444;
+}
+
+.store_info {
+	padding: 5vw;
+	color: #444;
+}
+
+.store_info h2 {
+	font-family: 'GmarketSansBold';
+	text-align: center;
+	font-size: 6vw;
+	margin-bottom: 3vw;
+}
+
+.store_info b {
+	font-family: 'GmarketSansMedium';
+	font-size: 4vw;
+}
+
+.store_info ul {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.store_info li {
+	font-family: 'GmarketSansLight';
+	font-size: 4vw;
+	padding: 1vw;
+}
+
+.store_map {
+	text-align: center;
+	padding: 5vw;
+	color: #444;
+}
+
+.store_map h2 {
+	font-family: 'GmarketSansBold';
+	text-align: center;
+	font-size: 6vw;
+	margin-bottom: 3vw;
+	color: #444;
+}
+
+.kMap {
+	width: 90vw;
+	height: 70vw;
+	border-radius: 2vw;
+	margin: 0 auto;
+}
+
+.store_review {
+	padding: 5vw 0;
+	color: #444;
+}
+
+.store_review h2 {
+	font-family: 'GmarketSansBold';
+	text-align: center;
+	font-size: 6vw;
+	margin-bottom: 3vw;
+	color: #444;
+}
+
+.store_review_context {
+	background-color: #eee;
+	padding: 3vw;
+	margin: 1vw 0 3vw 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.reviewer {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 3vw;
+	margin: 1vw 0;
+}
+
+.reviewer hr {
+	width: 94%;
+	margin: 0 auto;
+}
+
+.review_like {
+	font-family: 'GmarketSansLight';
+	text-align: center;
+}
+
+.reviewer_info h5 {
+	font-family: 'GmarketSansLight';
+	font-size: 4vw;
+}
+
+.reviewer_info p {
+	font-family: 'GmarketSansLight';
+	font-size: 3vw;
+	color: #777;
+}
+
+.reviewer img {
+	width: 8vw;
+}
+
+.review_context {
+	font-family: 'GmarketSansLight';
+	width: 95%;
+	padding: 2vw 3vw 2vw 3vw;
+}
+
+	.linkModal {
+		display: none;
+		position: fixed;
+		z-index: 5;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.linkModal_container {
+		background-color: white;
+		margin: 50vw auto;
+		padding: 5vw;
+		border: 0.3vw solid #444;
+		border-radius: 2.5vw;
+		width: 70vw;
+		height: 32vw;
+	}
+	.linkModal h2 {
+		font-family: 'GmarketSansMedium';
+		text-align: center;
+		font-size: 8vw;
+		color: #e8a761;
+	}
+	.linkModalIn {
+		text-align: center;
+	}
+	.pageInfo_container {
+		display: flex;
+		justify-content: center;
+		width: 48vw;
+		margin: 5px auto;
+	}
+	.pageInfo {
+		display: flex;
+		flex-flow: column;
+		margin: 2vw auto;
+	}
+	.linkArea {
+		width: 64vw;
+		margin: 0 auto;
+		font-size: 3vw;
+		padding: 1vw;
+		border: 0.1vw solid #777;
+		color: #777;
+		border-radius: 1vw;
+		text-align: center;
+	}
+	.linkCopyBtn {
+		font-family:'GmarketSansMedium';
+		background-color: #e8a761;
+		color: white;
+        width: 27vw;
+        height: 8vw;
+        padding: 2vw;
+        margin: 5vw auto;
+        font-size: 3vw;
+        border: 0.1vw solid #444;
+        -webkit-appearance: none;
+	    -webkit-border-radius: 1vw;
+	}
+	.linkCloseBtn {
+		font-family: 'GmarketSansLight';
+		color: #444;
+		float: right;
+		margin: 0 0 0 -5vw;
+		font-size: 5vw;
+		font-weight: bold;
+	}
+	.linkCloseBtn:hover, .linkCloseBtn:focus {
+		color: #e8a761;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	.info_title h2 {
+		font-size: 9vw;
+	}
+	.title_cat {
+		font-size: 3vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	.only_mobile {
+		display: none;
+	}
+	.wrap-all {
+		width: 890px;
+		margin: 0 auto;
+	}
+	.header {
+		background-color: rgba(200, 200, 200, 0.2);
+		padding: 30px;
+		margin: 30px 0;
+		border-radius: 10px;
+	}
+	.header_top {
+		margin: 0 0 30px 0;
+	}
+	.info_title {
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
+		width: 1310px;
+	}
+	.info_title h2 {
+		font-size: 64px;
+	}
+	.title_cat {
+		font-size: 32px;
+	}
+	.info_title h5 {
+		font-size: 24px;
+	}
+	.numbers div {
+		padding: 0;
+	}
+	.numbers h5 {
+		font-size: 20px;
+		color: #777;
+	}
+	.numbers img {
+		width: 30px;
+		height: 30px;
+	}
+	.photos {
+		text-align: center;
+	}
+	.photos img {
+		border-radius: 10px;
+		width: 830px;
+		height: 622.5px;
+	}
+	.hashtag {
+		padding: 0;
+	}
+	.hash_item {
+		margin: 20px 20px 0 0;
+		font-size: 24px;
+		padding: 10px 20px 8px 18px;
+		border-radius: 8px;
+		transition: 0.3s;
+	}
+	.brief {
+		padding: 0 80px;
+		background-color: rgba(200, 200, 200, 0.2);
+		border-radius: 10px;
+	}
+	.brief_item {
+		padding: 20px;
+	}
+	.brief_item img {
+		width: 60px;
+	}
+	.brief_item h5 {
+		padding-top: 15px;
+		font-size: 28px;
+	}
+	
+		.linkModal {
+			display: none;
+			position: fixed;
+			z-index: 5;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		.linkModal_container {
+			background-color: white;
+			margin: 120px auto;
+			padding: 25px;
+			border: 1.5px solid #444;
+			border-radius: 20px;
+			width: 500px;
+			height: 200px;
+		}
+		.linkModal_container h2 {
+			text-align: center;
+			font-size: 42px;
+			color: #e8a761;
+			font-family: 'GmarketSansMedium';
+		}
+		.linkModalIn {
+			text-align: center;
+		}
+		.pageInfo_container {
+			display: flex;
+			justify-content: center;
+			width: 420px;
+			margin: 5px auto;
+		}
+		.pageInfo {
+			display: flex;
+			flex-flow: column;
+			margin: 10px auto;
+		}
+		.linkArea {
+			width: 420px;
+			margin: 10px auto;
+			font-size: 18px;
+			padding: 8px 0 9px 2px;
+			border: 1px solid #777;
+			color: #777;
+			border-radius: 5px;
+		}
+		.linkCopyBtn {
+			font-family:'GmarketSansMedium';
+			background-color: #e8a761;
+			border: 1px solid #777;
+			color: white;
+	        width: 200px;
+	        height: 36px;
+	        padding: 8px;
+	        margin: 10px auto;
+	        font-size: 16px;
+	        transition: 0.7s;
+	        -webkit-appearance: none;
+		    -webkit-border-radius: 3px;
+		}
+		.linkCopyBtn:hover {
+			background-color: white;
+			color: #e8a761;
+			cursor: pointer;
+		}
+		.linkCloseBtn {
+			font-family: 'GmarketSansLight';
+			color: #444;
+			float: right;
+			font-size: 36px;
+			font-weight: bold;
+		}
+		.linkCloseBtn:hover, .linkCloseBtn:focus {
+			color: #e8a761;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	
+	.store_info {
+		padding: 20px 40px;
+		background-color: rgba(200, 200, 200, 0.2);
+		padding: 30px;
+		margin: 30px 0;
+		border-radius: 10px;
+	}
+	.store_info h2 {
+		font-size: 54px;
+		margin-bottom: 10px;
+	}
+	.store_info li b {
+		font-size: 32px;
+	}
+	.store_info li {
+		font-size: 28px;
+		padding: 10px;
+	}
+	.store_map {
+		padding: 20px 40px;
+		background-color: rgba(200, 200, 200, 0.2);
+		padding: 30px;
+		margin: 30px 0;
+		border-radius: 10px;
+	}
+	.store_map h2 {
+		font-size: 54px;
+		margin-bottom: 10px;
+	}
+	.kMap {
+		width: 800px;
+		height: 500px;
+		border: 1px solid #999;
+		border-radius: 5px;
+	}
+	.store_map img {
+		border-radius: 15px;
+		padding: 5px;
+	}
+	.store_review {
+		padding: 20px 40px;
+		background-color: rgba(200, 200, 200, 0.2);
+		padding: 30px;
+		margin: 30px 0;
+		border-radius: 10px;
+	}
+	.store_review h2 {
+		font-size: 54px;
+		margin-bottom: 10px;
+	}
+	.store_review_context {
+		margin: 10px auto 30px auto;
+		background-color: #fff;
+		width: 85%;
+		border-radius: 10px;
+		padding: 10px;
+	}
+	.reviewer {
+		margin: 10px 0;
+		padding: 0 40px;
+	}
+	.store_review_context hr {
+		width: 92%;
+		margin: 0 auto;
+	}
+	.reviewer_info h5 {
+		font-size: 32px;
+	}
+	.reviewer_info p {
+		font-size: 20px;
+	}
+	.review_like {
+		height: 70px;
+		margin: auto 0;
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
+	}
+	.review_like img {
+		width: 40px;
+	}
+	.review_context {
+		padding: 15px 20px;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.review_context p {
+		font-size: 20px;
+	}
+}

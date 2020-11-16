@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+* { background-color: #e8a761; }
+.submenu_title {
+	font-family: 'GmarketSansBold';
+	color: white;
+	text-align: center;
+	margin-top: 7%;
+	margin-bottom: 10%;
+	font-size: 10vw;
+}
+
+.submenu_list li {
+	margin: 5%;
+	font-family: 'GmarketSansLight';
+	font-size: 8vw;
+	text-align: center;
+}
+.goBack { display: none; }
+
+/* 576px 이상 tablet */
+@media (min-width: 576px) {
+	.submenu_list li { font-size: 7vw; }
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	* { background-color: white }
+	.submenu_title { display: none; }
+	.submenu_list { display: none; }
+	.goBack {
+		display: block;
+		width: 50%; 
+		height: 100%;
+		padding: 30px 20px;
+		margin: 20% auto;
+		text-align: center;
+		font-family: 'GmarketSansBold';
+		font-size: 40px;
+		border: 1px solid #e8a761;
+		background-color: #e8a761;
+		border-radius: 10px;
+		color: white;
+	}
+}

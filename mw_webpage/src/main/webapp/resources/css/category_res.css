@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+.cardview {
+	display: flex;
+	justify-content: space-around;
+	width: 77vw;
+	padding: 5vw;
+	margin: 4vw auto;
+	border: 0.3vw solid #444;
+	border-radius: 2vw;
+}
+.noRes {
+	font-family: 'GmarketSansLight';
+	color: #444;
+	font-size: 6vw;
+	margin: 45vw auto;
+	text-align: center;
+}
+.card {
+	box-shadow: 0 2vw 2vw 0 rgba(0, 0, 0, 0.2);
+	width: 35vw;
+	margin-bottom: 3vw;
+}
+.card:hover {
+	transition: 0.7s;
+	background: #f1cba0;
+}
+.card img { 
+	width: 35vw;
+	height: 35vw;
+	object-fit: cover; 
+}
+.texts {
+	display: flex;
+	padding-top: 1vw;
+	font-family: 'GmarketSansLight';
+	color: #777;
+	margin: 0 auto;
+	font-size: 2.7vw;
+	text-align: center;
+}
+.text_container { 
+	padding: 2vw 1vw;
+	height: 20vw;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+}
+.text_container h4 {
+	font-family: 'GmarketSansBold';
+	color: #444;
+	text-align: center;
+	font-size: 4vw;
+}
+.shop_info { 
+	display: flex;
+	justify-content: space-evenly;
+	width: 32vw;
+	margin-top: 2vw;
+}
+.shop_info img {
+	width: 3vw;
+	height: 3vw;
+	object-fit: contain;
+}
+.shop_info h5 {
+	font-family: 'GmarketSansLight';
+	color: #444;
+	font-size: 2vw;
+	margin: auto 0;
+}
+
+/* 576px 이상 tablet */
+@media (min-width: 576px){
+	.cardview {
+		border: 0.3vw solid #444;
+		border-radius: 1vw;
+	}
+	.noRes {
+		margin: 36vw auto;
+		font-size: 5vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	.cardview {
+		display: block;
+		width: 770px;
+		padding: 24px 56px 56px 56px;
+		margin: 30px auto 100px auto;
+		border: 1px solid #444;
+		border-radius: 10px;
+	}
+	.noRes {
+		font-size: 36px;
+		margin: 250px auto;
+	}
+	.card {
+		display: flex;
+		width: 720px;
+		height: 100%;
+		margin: 20px auto;
+		box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+		border: 1px solid #444;
+		border-radius: 10px;
+		padding: 24px;
+		cursor: pointer;
+	}
+	.card img {
+		width: 220px;
+		height: 220px;
+		margin: auto 0;
+		border-radius: 10px;
+	}
+	.text_container {
+		width: 480px;
+		height: 220px;
+		padding: 0 0 0 24px;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	.text_container img { border-radius: 0; }
+	.text_container h4 {
+		font-size: 42px;
+		text-align: left;
+	}
+	.texts {
+		display: flex;
+		justify-content: flex-start;
+		width: 480px;
+		padding: 0;
+		font-size: 24px;
+		margin-top: 2px;
+	}
+	.texts p {
+		font-size: 21px;
+		text-align: left;
+		padding: 0;
+	}
+	.shop_info {
+		margin: 85px 0 0 0px;
+		display: flex;
+		justify-content: space-between;
+		width: 240px;
+	}
+	.shop_info h5 {
+		font-family: 'GmarketSansLight';
+		font-size: 18px;
+		color: #444;
+	}
+	.shop_info img {
+		width: 25px;
+		height: 25px;
+		object-fit: contain;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

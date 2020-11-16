@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- DB 처리 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="org.mariadb.jdbc.Driver" />
+		<property name="url" value="jdbc:mariadb://localhost:3306/mw_database" />
+		<property name="username" value="root"></property>
+		<property name="password" value="maria7963"></property>
+	</bean>
+
+	<!-- config.xml -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:config.xml" />
+	</bean>
+
+	<bean id="sqlSessionTemplate"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean" />
+	</bean>
+
+	<!-- DI -->
+	<bean id="dao" class="com.mw.db.DAO" autowire="byName" />
+	<bean id="paging" class="com.mw.model.Paging" autowire="byName" />
+
+	<!-- upload -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="104857600" />
+	</bean>
+
+	<!-- DBCP2 - DataSource 설정 -->
+	<bean id="sampleDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.sample.driverClassName}" />
+		<property name="url" value="${jdbc.sample.url}${jdbc.sample.connectionProperties}" />
+		<property name="username" value="${jdbc.sample.username}" />
+		<property name="password" value="${jdbc.sample.password}" /> <!-- 하위 4개 항목을 동일하게 설정 - 예외 케이스 낮춤 -->
+		<property name="initialSize" value="20" />
+		<property name="maxTotal" value="20" />
+		<property name="maxIdle" value="20" />
+		<property name="minIdle" value="20" />
+		<property name="defaultReadOnly" value="true" /> <!-- pool이 고갈되었을 경우 최대 대기 타임 ms -->
+		<property name="maxWaitMillis" value="3000" />
+		<property name="validationQuery" value="SELECT 1" /> <!-- Evictor 설정 -->
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" /> <!-- testWhileIdle - 150초 마다 4개의 connection 꺼내 validation query를 날려 확인 -->
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="150000" />
+		<property name="numTestsPerEvictionRun" value="4" />
+		<property name="minEvictableIdleTimeMillis" value="-1" /> <!-- preparedStatement 풀링 여부 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxOpenPreparedStatements" value="50" />
+	</bean>
+
+</beans>

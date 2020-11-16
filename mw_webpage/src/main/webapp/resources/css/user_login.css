@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+.loginInfo {
+	border: 0.2vw solid #444;
+	border-radius: 1vw;
+	background-color: #fff;
+	width: 85vw;
+	padding: 3vw 0;
+	margin: 7vw auto 0 auto;
+}
+.loginInfo h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 7vw;
+	color: #e8a761;
+	text-align: center;
+}
+.loginInfo p {
+	font-family: 'GmarketSansLight';
+	font-size: 3vw;
+	color: #777;
+	text-align: center;
+	margin: 3vw 0;
+}
+.socialLink {
+	text-align: center;
+}
+.socialLink img {
+	width: 70vw;
+	margin: 2vw;
+	cursor: pointer;
+}
+.addLink {
+	text-align: center;
+	font-family: 'GmarketSansLight';
+	font-size: 2vw;
+	color: #aaa;
+	margin: 3vw 0;
+}
+.addLink a {
+	font-family: 'GmarketSansLight';
+	font-size: 2.5vw;
+	color: #777;
+}
+.addLink a:hover {
+	color: #e8a761;
+}
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	.loginInfo {
+		border: 0.1vw solid #444;
+	}
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	.loginInfo {
+		border: 0.1px solid #444;
+		border-radius: 8px;
+		width: 700px;
+		padding: 30px 0;
+		margin: 30px auto 0 auto;
+	}
+	.loginInfo h2 {
+		font-size: 68px;
+	}
+	.loginInfo p {
+		font-size: 20px;
+		margin: 24px 0;
+	}
+	.socialLink img {
+		width: 500px;
+		margin: 16px;
+	}
+	.loginInfo a {
+		font-size: 12px;
+	}
+	.addLink {
+		font-size: 14px;
+		margin: 30px 0;
+	}
+	.addLink a {
+		font-size: 14px;
+	}
+}

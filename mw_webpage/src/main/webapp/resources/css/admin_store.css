@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+.info {
+	text-align: center;
+	margin-top: 3vw;
+}
+.info h2 {
+	font-family: 'GmarketSansBold';
+	color: #444;
+	font-size: 8vw;
+}
+.btn {
+	font-family: 'GmarketSansLight';
+	display: flex;
+	justify-content: space-between;
+	width: 88%;
+	margin: 4vw auto 0 auto;
+}
+.btn div {
+	font-family: 'GmarketSansLight';
+	color: #444;
+	font-size: 4vw;
+	cursor: pointer;
+}
+.btn div:hover {
+	color: #e8a761;
+}
+.store_list { 
+	margin: 1vw auto; 
+}
+table {
+	font-family: 'GmarketSansLight';
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+th,td {
+	border: 0.2vw solid #444;
+	padding: 2vw;
+	font-size: 4vw;
+}
+th { 
+	background-color: #e8a761;
+	color: white;
+}
+th:first-child {
+	width: 16%;
+}
+th:last-child {
+	width: 21%;
+}
+td a { font-family: 'GmarketSansLight'; }
+td a:hover { color: #e8a761; }
+.paging {
+	font-family: 'GmarketSansLight';
+	margin-top: 3vw;
+	text-align: center;
+}
+
+/* 576px 이상 tablet */
+@media (min-width: 576px){
+	td input {
+		border: 0.2vw solid #444;
+	}
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	.info { margin-top: 32px; }
+	.info h2 { font-size: 70px; }
+	.btn {
+		width: 780px;
+		margin: 32px auto 0 auto;
+	}
+	.btn div {
+		font-size: 28px;
+	}
+	table { width: 800px; }
+	th,td {
+		border: 1px solid #444;
+	}
+	th { 
+		font-size: 28px;
+		padding: 20px;
+	}
+	th:first-child { width: 70px; }
+	th:last-child {	width: 100px; }
+	td { 
+		font-size: 28px;
+		padding: 24px;
+	}
+	
+}

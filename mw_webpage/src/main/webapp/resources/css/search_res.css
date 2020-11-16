@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+.search_res_searchbar {
+	border: 0.2vw solid #444;
+	border-radius: 7px;
+	width: 83vw;
+	margin: 8vw auto 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	padding: 2vw;
+}
+.search_res_searchbar input {
+	width: 5vw;
+	margin-left: 2vw;
+}
+.search_res_searchbar p { margin: auto 0; }
+.search_res_searchbar p input {
+	font-family: 'GmarketSansLight';
+	font-size: 5vw;
+	width: 60vw;
+	margin-right: 15vw;
+	border-left-width:0;
+	border-right-width:0;
+	border-top-width:0;
+	border-bottom-width:0;
+}
+.search_res_searchbar p input::placeholder {
+	color: #777;
+}
+.search_res_searchbar p input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.cardview {
+	display: flex;
+	justify-content: flex-start;
+	width: 77vw;
+	padding: 5vw;
+	margin: 4vw auto;
+	border: 0.2vw solid #444;
+	border-radius: 7px;
+}
+.noRes {
+	font-family: 'GmarketSansLight';
+	color: #444;
+	font-size: 6vw;
+	margin: 45vw auto;
+	text-align: center;
+}
+.card {
+	box-shadow: 0 2vw 2vw 0 rgba(0, 0, 0, 0.2);
+	width: 35vw;
+	margin-bottom: 3vw;
+	cursor: pointer;
+}
+.card:hover {
+	transition: 0.7s;
+	background: #f1cba0;
+}
+.card img { 
+	width: 35vw;
+	height: 35vw;
+	object-fit: cover;
+	image-orientation: from-image;
+}
+.texts {
+	display: flex;
+	padding-top: 1vw;
+	font-family: 'GmarketSansLight';
+	color: #777;
+	margin: 0 auto;
+	font-size: 2.5vw;
+	text-align: center;
+}
+.text_container { 
+	padding: 2vw 1vw;
+	height: 20vw;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+}
+.text_container h4 {
+	font-family: 'GmarketSansMedium';
+	color: #444;
+	text-align: center;
+	font-size: 4vw;
+}
+.shop_info { 
+	display: flex;
+	justify-content: space-evenly;
+	width: 32vw;
+	margin-top: 2vw;
+}
+.shop_info img {
+	width: 3vw;
+	height: 3vw;
+	object-fit: contain;
+}
+.shop_info h5 {
+	font-family: 'GmarketSansLight';
+	color: #444;
+	font-size: 2vw;
+	margin: auto 0;
+}
+
+/* 576px 이상 tablet */
+@media (min-width: 576px){
+	.search_res_searchbar {
+		border: 0.2vw solid #444;
+	}
+	.search_res_searchbar p input {
+		margin : 1vw 15vw 0 3vw;
+	}
+	.cardview {
+		border: 0.2vw solid #444;
+	}
+	.noRes {
+		margin: 36vw auto;
+		font-size: 5vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	.search_res_searchbar {
+		width: 870px;
+		margin: 30px auto 0 auto;
+		padding: 10px;
+		border: 1px solid #444;
+		border-radius: 10px;
+	}
+	.search_res_searchbar input {
+		width: 30px;
+		margin-left: 10px;
+	}
+	.search_res_searchbar p input {
+		font-size: 32px;
+		width: 800px;
+		padding: 10px 0 5px 20px;
+		margin: 0 auto;
+		color: #444;
+	}
+	.search-bar-click {
+		font-family: 'GmarketSansLight';
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		background-color: white;
+		width: 890px;
+		height: 185px;
+		margin: 0 auto;
+		top: -8px;
+		border: 1px solid #444;
+		color: #444;
+	}
+	.search-bar-click h5 {
+		font-size: 26px;
+	}
+	.search-bar-click p {
+		font-size: 20px;
+		padding: 8px 0 0px 10px;
+	}
+	.prev_search {
+		padding: 24px;
+		width: 330px;
+	}
+	.want_search {
+		padding: 24px;
+		width: 340px;
+	}
+	
+	.cardview {
+		display: block;
+		width: 780px;
+		padding: 24px 56px 56px 56px;
+		margin: 30px auto 100px auto;
+		border: 1px solid #444;
+		border-radius: 10px;
+	}
+	.noRes {
+		font-size: 36px;
+		margin: 250px auto;
+	}
+	.card {
+		display: flex;
+		width: 720px;
+		height: 100%;
+		margin: 20px auto;
+		box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+		border: 1px solid #444;
+		border-radius: 10px;
+		padding: 24px;
+	}
+	.card img {
+		width: 220px;
+		height: 220px;
+		margin: auto 0;
+		border-radius: 10px;
+	}
+	.text_container {
+		width: 480px;
+		height: 220px;
+		padding: 0 0 0 24px;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	.text_container img { border-radius: 0; }
+	.text_container h4 {
+		font-size: 42px;
+		text-align: left;
+	}
+	.texts {
+		display: flex;
+		justify-content: flex-start;
+		width: 480px;
+		padding: 0;
+		font-size: 24px;
+		margin-top: 10px;
+	}
+	.texts p {
+		font-size: 21px;
+		text-align: left;
+		padding: 0;
+	}
+	.shop_info {
+		margin: 85px 0 0 0px;
+		display: flex;
+		justify-content: space-between;
+		width: 240px;
+	}
+	.shop_info h5 {
+		font-family: 'GmarketSansLight';
+		font-size: 18px;
+		color: #444;
+	}
+	.shop_info img {
+		width: 25px;
+		height: 25px;
+		object-fit: contain;
+	}
+
+}
+

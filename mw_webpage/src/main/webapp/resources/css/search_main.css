@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+.search_main_searchbar {
+	width: 88%;
+	padding: 3vw 0;
+	margin: 7vw auto 8vw auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.search_main_searchbar img {
+	margin: auto 0;
+	width: 6vw;
+}
+
+.search_main_searchbar p input {
+	font-family: 'GmarketSansLight';
+	font-size: 5vw;
+	width: 62vw;
+	margin: auto 0;
+	padding: 0 0 0 2vw;
+	color: #444;
+	border: 2px solid #e8a761;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+.search_main_searchbar input {
+	width: 6vw;
+	margin: auto 0;
+}
+
+.search_main_items {
+	display: flex;
+	flex-direction: column;
+	width: 83%;
+	margin: 0 auto;
+}
+
+.search_main_items h4 {
+	font-family: 'GmarketSansBold';
+	font-size: 6vw;
+	color: #e8a761;
+}
+
+.search_main_items ul {
+	margin-top: 2vw;
+}
+
+.search_main_items li {
+	font-family: 'GmarketSansLight';
+	font-size: 5vw;
+	margin: 2vw auto;
+	color: #444;
+}
+
+.search_main_recommand {
+	margin-top: 5vw;
+}
+
+.search_main_item {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin-left: 8vw;
+}
+.goBack { display: none; }
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	.search_main_searchbar {
+		margin: 6vw auto;
+	}
+	.search_main_searchbar p input {
+		border: 3px solid #e8a761;
+		border-left-width: 0;
+		border-right-width: 0;
+		border-top-width: 0;
+	}
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	.search_main_searchbar {
+		display: none;
+	}
+	.search_main_items {
+		display: none;
+	}
+	.goBack {
+		display: block;
+		width: 50%; 
+		height: 100%;
+		padding: 30px 20px;
+		margin: 20% auto;
+		text-align: center;
+		font-family: 'GmarketSansBold';
+		font-size: 40px;
+		background-color: #e8a761;
+		color: white;
+	}
+}

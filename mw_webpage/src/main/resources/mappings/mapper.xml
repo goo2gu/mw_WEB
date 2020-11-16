@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mw_database">
+
+	<select id="kakaoIdChk" parameterType="String" resultType="Integer">
+		SELECT count(*) 
+		FROM mw_database.mw_members 
+		WHERE m_id = #{m_id} AND m_sns = '카카오'
+	</select>
+
+	<insert id="kakaoAdd" parameterType="mvo">
+		INSERT INTO 
+		mw_database.mw_members 
+		VALUES(m_idx, #{m_sns}, #{m_id}, #{m_email}, 
+				#{m_nickname}, #{m_profile_img}, #{m_thumbnail_img}, 
+				#{m_age_range}, #{m_gender}, SYSDATE())
+	</insert>
+	
+	<select id="kakaoLogin" parameterType="String" resultType="mvo">
+		SELECT * 
+		FROM mw_database.mw_members 
+		WHERE m_sns = '카카오' AND m_id = #{m_id}
+	</select>
+	
+	<select id="hotList" resultType="svo">
+		SELECT * 
+		FROM mw_database.mw_stores 
+		ORDER BY s_view desc
+	</select>
+ 
+ 	<select id="totalCount" resultType="int">
+		SELECT count(*) 
+		FROM mw_database.mw_stores;
+	</select>
+
+	<select id="adminList" parameterType="Map" resultType="svo">
+		SELECT *
+		FROM (
+			SELECT 	@rownum:=@rownum+1 r_num,
+					A.*
+			FROM 	mw_database.mw_stores A,
+					(SELECT @ROWNUM := 0) R
+			WHERE 	1=1
+			ORDER BY s_name ASC
+		) list
+		WHERE r_num BETWEEN #{begin} AND #{end}
+	</select>
+
+	<insert id="adminWrite" parameterType="svo">
+		INSERT INTO
+		mw_database.mw_stores
+		VALUES(s_idx, #{s_name}, #{s_cat_b}, #{s_cat_s}, 
+				#{s_sub}, #{s_img}, #{s_hashtag}, #{s_location}, 
+				#{s_lat}, #{s_lng}, #{s_tel}, #{s_hour}, #{s_menu}, 0, 0, 0)
+	</insert>
+	
+	<select id="adminOnelist" parameterType="String" resultType="svo">
+		SELECT * 
+		FROM mw_database.mw_stores 
+		WHERE s_idx = #{s_idx}
+	</select>
+	
+	<update id="adminUpdate" parameterType="svo">
+		UPDATE mw_database.mw_stores 
+		SET s_name = #{s_name}, s_cat_b = #{s_cat_b}, s_cat_s = #{s_cat_s}, 
+			s_sub = #{s_sub}, s_img = #{s_img}, s_hashtag = #{s_hashtag}, 
+			s_location = #{s_location}, s_lat = #{s_lat}, s_lng = #{s_lng}, 
+			s_tel = #{s_tel}, s_hour = #{s_hour}, s_menu = #{s_menu}
+		WHERE s_idx = #{s_idx}
+	</update>
+	
+	<delete id="adminDelete" parameterType="String">
+		DELETE FROM mw_database.mw_stores 
+		WHERE s_idx = #{s_idx}
+	</delete>
+
+	<select id="search" parameterType="String" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE (s_name LIKE CONCAT('%', #{keyWord}, '%')
+				OR s_sub LIKE CONCAT('%', #{keyWord}, '%')
+				OR s_hashtag LIKE CONCAT('%', #{keyWord}, '%')
+				OR s_menu LIKE CONCAT('%', #{keyWord}, '%'))
+	</select>
+
+	<select id="catDri" resultType="svo">
+		SELECT * FROM mw_database.mw_stores WHERE s_cat_b = "마실거리"
+	</select>
+	
+	<select id="catAl" resultType="svo">
+		SELECT * FROM mw_database.mw_stores WHERE s_cat_s = "술집"
+	</select>
+	
+	<select id="catCf" resultType="svo">
+		SELECT * FROM mw_database.mw_stores WHERE s_cat_s = "카페"
+	</select>
+
+	<update id="viewUpdate" parameterType="String">
+		UPDATE mw_database.mw_stores 
+		SET s_view = (s_view + 1) 
+		WHERE s_idx = #{s_idx}
+	</update>
+
+	<select id="storeInfo" parameterType="String" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_idx = #{s_idx}
+	</select>
+	
+	<update id="likeUpdate" parameterType="String">
+		UPDATE mw_database.mw_stores 
+		SET s_like = (s_like + 1) 
+		WHERE s_idx = #{s_idx}
+	</update>
+
+	<select id="getEat" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_b = '먹을거리'
+	</select>
+	
+	<select id="getDrink" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_b = '마실거리'
+	</select>
+	
+	<select id="getPlay" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_b = '즐길거리'
+	</select>
+	
+	<select id="getSmall" parameterType="String" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_s = #{s_cat_s}
+	</select>
+ 
+</mapper>

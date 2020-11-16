@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+.wrap-all {
+	width: 90%;
+	margin: 0 auto;
+	color: #444;
+}
+
+form {
+	text-align: center;
+}
+
+.qna_title {
+	margin: 5vw;
+}
+
+.qna_title h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
+}
+
+.qna_title input {
+	margin: 10vw 0 5vw 0;
+	width: 100%;
+	font-family: 'GmarketSansLight';
+	font-size: 7vw;
+	text-align: center;
+	border-left-width:0;
+	border-right-width:0;
+	border-top-width:0;
+	border-bottom-width:1;
+}
+
+.qna_context {
+	margin: 5vw;
+	text-align: center;
+}
+
+.qna_context textarea {
+	width: 90%;
+	height: 60vw;
+	padding: 5%;
+	font-family: 'GmarketSansLight';
+	font-size: 5vw;
+	border: 2px solid #444;
+}
+
+.qna_context textarea::placeholder {
+	font-family: 'GmarketSansLight';
+	text-align: center;
+	font-size: 5vw;
+}
+
+.qna_submit {
+	display: flex;
+	justify-content: center;
+}
+
+.qna_submit input {
+	font-family: 'GmarketSansBold';
+	padding: 3vw;
+	margin: 2vw;
+	width: 42%;
+	font-size: 7vw;
+	background: white;
+	color: #444;
+	border: 2px solid #444;
+	border-color: #444;
+	border-radius: 5px;
+}
+
+.qna_submit input:hover {
+	background-color: #e8a761;
+	border-color: #e8a761;
+	color: white;
+}
+
+
+/* 576px 이상 tablet */
+@media (min-width: 576px){
+	.qna_title input {
+		margin: 4vw 0;
+		font-size: 5vw;
+	}
+	.qna_context {
+		margin: 1vw 5vw 3vw 5vw;
+	}
+	.qna_context textarea {
+		height: 50vw;
+		font-size: 4vw;
+	}
+	.qna_context textarea::placeholder {
+		font-size: 4vw;
+	}
+	.qna_submit input {
+		font-size: 5vw;
+		padding: 0;
+		height: 12vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	.wrap-all {
+		width: 890px;
+		margin: 0 auto;
+	}
+	.qna_title {
+		padding: 0;
+		margin: 20px 0 0 0;
+		text-align: center;
+	}
+	.qna_title h2 {
+		font-size: 70px;
+	}
+	.qna_title input {
+		width: 80%;
+		margin: 40px auto;
+		font-size: 32px;
+	}
+	.qna_context {
+		margin: 20px auto 0 auto;
+	}
+	.qna_context textarea {
+		width: 70%;
+		height: 240px;
+		font-size: 28px;
+		margin: 20px 0 20px 0;
+	}
+	.qna_context textarea::placeholder {
+		font-size: 28px;
+	}
+	.qna_submit input {
+		font-size: 36px;
+		padding: 10px 10px 7px 10px;
+		height: 92px;
+		width: 331px;
+		margin: 28px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+.main_header {
+	font-family: 'GmarketSansBold';
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	margin: 3vw auto;
+}
+
+.top_menu {
+	margin: auto 0;
+}
+
+.top_menu img {
+	width: 7vw;
+}
+
+.top_title {
+	display: flex;
+}
+
+.top_title img {
+	margin: auto 0;
+	width: 24vw;
+}
+
+.top_search {
+	margin: auto 0;
+}
+
+.top_search img {
+	width: 8vw;
+}
+
+.main_navi {
+	display: none;
+}
+
+.mobile_menu a {
+	color: #555;
+}
+
+/* 576px 이상 */
+@media ( min-width : 576px) {
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	.main_header {
+		width: 890px;
+		height: 100px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	.top_menu {
+		display: none;
+	}
+	.top_search {
+		display: none;
+	}
+	.top_title {
+		font-size: 30px;
+		margin: auto 0;
+		display: flex;
+		width: 400px;
+	}
+	.top_title img {
+		width: 190px;
+	}
+	.main_navi {
+		display: block;
+		width: 420px;
+		margin: auto 0;
+		font-size: 25px;
+		color: #444;
+	}
+	.navi_wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+	.navi_wrap a {
+		cursor: pointer;
+	}
+	.navi_wrap a:hover {
+		color: #e8a761;
+	}
+}

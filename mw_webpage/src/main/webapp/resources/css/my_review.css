@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+.wrap-all {
+	width: 90%;
+	color: #444;
+	margin: 0 auto;
+}
+
+.review_title h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
+	color: #444;
+	padding-top: 5vw;
+	text-align: center;
+}
+
+.review_list {
+	margin: 5vw auto;
+}
+
+.review_item {
+	border: 2px solid #444;
+	border-radius: 7px;
+	padding: 5vw;
+	margin: 5vw 0;
+}
+
+.item_info {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1vw;
+}
+
+.item_info h4 {
+	font-family: 'GmarketSansBold';
+	color: #444;
+	font-size: 5vw;
+	margin: auto 0;
+}
+
+.item_info h5 {
+	font-family: 'GmarketSansLight';
+	color: #777;
+	font-size: 3vw;
+	margin: auto 0;
+}
+
+.review_item p {
+	font-family: 'GmarketSansLight';
+	font-size: 4.5vw;
+	margin-top: 2vw;
+}
+
+
+/* 576px 이상 tablet */
+@media (min-width: 576px){
+	.review_item {
+		padding: 3vw;
+	}
+	.review_item p {
+		font-size: 3.5vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	.wrap-all {
+		width: 890px;
+		margin: 0 auto;
+	}
+	.review_title h2 {
+		padding-top: 0;
+		margin-top: 20px;
+		font-size: 70px;
+	}
+	.review_list {
+		width: 80%
+	}
+	.review_item {
+		padding: 30px;
+		margin: 20px auto;
+	}
+	.item_info {
+		margin-bottom: 10px;
+	}
+	.item_info h4 {
+		font-size: 36px;
+	}
+	.item_info h5 {
+		font-size: 24px;
+	}
+	.review_item p {
+		margin-top: 20px;
+		font-size: 28px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

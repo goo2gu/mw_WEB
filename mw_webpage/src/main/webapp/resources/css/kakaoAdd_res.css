@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+article h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
+	color: #e8a761;
+	text-align: center;
+	margin: 5vw auto 0 auto;
+}
+
+.addInfo {
+	opacity: 0;
+	text-align: center;
+	border: 0.2vw solid #777;
+	border-radius: 1vw;
+	width: 60vw;
+	padding: 3vw;
+	margin: 5vw auto;
+}
+
+.addInfo img {
+	width: 50vw;
+	height: 50vw;
+	border: 0.2vw solid #777;
+	border-radius : 50vw;
+	margin: 5vw 0;
+	object-fit: cover;
+	image-orientation: from-image;
+}
+
+.addInfo h4 {
+	font-family: 'GmarketSansMedium';
+	font-size: 7vw;
+	color: #555;
+}
+
+.addInfo p {
+	font-family: 'GmarketSansLight';
+	font-size: 3vw;
+	color: #aaa;
+}
+
+.addRes {
+	opacity: 0;
+	text-align: center;
+	color: #e8a761;
+	margin: 9vw;
+}
+.addRes p {
+	font-family: 'GmarketSansLight';
+	font-size: 5vw;
+	margin: 1.5vw;
+}
+.addRes span {
+	font-family: 'GmarketSansMedium';
+	font-size: 6vw;
+}
+.addRes button {
+	background-color: #e8a761;
+	border: 0.2vw solid #e8a761;
+	border-radius: 1vw;
+	font-family: 'GmarketSansMedium';
+	font-size: 5vw;
+	color: white;
+	padding: 2vw 3vw;
+	margin: 5vw;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.addRes button:hover {
+	background-color: white;
+	color: #e8a761;
+}
+
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	article h2 {
+		font-size: 7vw;
+	}
+	.addInfo img {
+		width: 40vw;
+		height: 40vw;
+		margin: 3vw auto;
+	}
+	.addInfo h4 {
+		font-size: 6vw;
+	}
+	.addInfo p {
+		font-size: 2vw;
+	}
+	.addRes {
+		margin: 5vw;
+	}
+	.addRes p {
+		margin: 1vw;
+	}
+	.addRes span {
+		font-size: 3.5vw;
+	}
+	.addRes button {
+		border: 0.1vw solid #e8a761;
+		font-size: 4vw;
+		margin: 3vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	article h2 {
+		font-size: 64px;
+		margin: 36px auto 0 auto;
+	}
+	.addInfo {
+		border: 1px solid #777;
+		border-radius: 5px;
+		width: 600px;
+		padding: 20px 0 40px 0;
+		margin: 30px auto;
+	}
+	.addInfo img {
+		width: 300px;
+		height: 300px;
+		border: 1px solid #777;
+		border-radius : 200px;
+		margin: 30px auto;
+	}
+	.addInfo h4 {
+		font-size: 48px;
+	}
+	.addInfo p {
+		font-size: 18px;
+	}
+	.addRes {
+		margin: 0;
+	}
+	.addRes p {
+		font-size: 32px;
+		margin: 16px;
+	}
+	.addRes span {
+		font-size: 36px;
+	}
+	.addRes button {
+		border: 1px solid #e8a761;
+		border-radius: 5px;
+		font-size: 28px;
+		padding: 16px 24px;
+		margin: 10px;
+	}
+	
+}

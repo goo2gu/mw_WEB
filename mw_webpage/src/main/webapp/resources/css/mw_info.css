@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.wrap_all {
+	width: 100%;
+	margin: 5vw auto;
+}
+
+.mw_info_title {
+	font-family:'GmarketSansBold';
+	opacity: 0;
+	margin: 0 auto;
+	text-align: center;
+	color: #e8a761;
+	font-size: 5vw;
+}
+
+.mw_info_context {
+	opacity: 0;
+	font-family:'GmarketSansLight';
+	font-size: 5vw;
+	color: white;
+	text-align: center;
+	margin: 5vw auto;
+	border: 1vw solid #e8a761;
+	background-color: #e8a761;
+	border-radius: 10px;
+	line-height: 8vw;
+	width: 90vw;
+	height: 83vw;
+}
+
+.texts {
+	padding: 5vw 3vw 0vw 3vw;
+	text-align: center;
+}
+
+.txt_hlt {
+	font-family:'GmarketSansMedium';
+	font-size: 6vw;
+}
+
+.sns_link {
+	font-family:'GmarketSansBold';
+	width: 80vw;
+	display: flex;
+	flex-flow: column;
+	margin: 0 auto;
+	padding: 2vw 2vw 4vw 9.5vw;
+}
+
+.sns_link div {
+	display: flex;
+	justify-content: flex-start;
+	width: 70vw;
+	padding: 2vw;
+}
+
+.sns_link img {
+	width: 10vw;
+	height: 10vw;
+}
+
+.sns_link p {
+	padding-left: 2vw;
+	margin: auto 0;
+	font-family:'GmarketSansMedium';
+	color: white; 
+}
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	.wrap_all {
+		margin: 3vw auto;
+	}
+	.mw_info_context {
+		margin: 3vw auto;
+	}
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	.wrap_all {
+		width: 960px;
+		margin: 0 auto;
+	}
+	.mw_info_title {
+		margin-top: 24px;
+		font-size: 36px;
+	}
+	.mw_info_context {
+		width: 900px;
+		height: 560px;
+		font-size: 40px;
+		margin: 15px auto 80px auto;
+		border: 2px solid #e8a761;
+		line-height: 65px;
+	}
+	.texts {
+		padding: 42px;
+		height: 180px;
+		font-size: 36px;
+		line-height: 52px;
+	}
+	.txt_hlt {
+		font-family: 'GmarketSansBold';
+		font-size: 50px;
+	}
+	.sns_link {
+		font-family: 'GmarketSansBold';
+		display: flex;
+		flex-flow: column;
+		height: 190px;
+		width: 570px;
+		padding: 10px 0 0 12px;
+	}
+	.sns_link div {
+		width: 564px;
+		padding: 12px;
+		cursor: pointer;
+	}
+	.sns_link img {
+		width: 60px;
+		height: 60px;
+	}
+}
+

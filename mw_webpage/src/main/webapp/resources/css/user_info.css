@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+article h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
+	color: #e8a761;
+	text-align: center;
+	margin: 5vw auto 0 auto;
+}
+.addInfo {
+	text-align: center;
+	border: 0.3vw solid #777;
+	border-radius: 1vw;
+	width: 80vw;
+	padding: 3vw;
+	margin: 5vw auto;
+}
+.addInfo img {
+	width: 50vw;
+	height: 50vw;
+	border: 0.2vw solid #777;
+	border-radius : 50vw;
+	margin: 5vw 0;
+	object-fit: cover;
+	image-orientation: from-image;
+}
+.addInfo h4 {
+	font-family: 'GmarketSansMedium';
+	font-size: 7vw;
+	color: #555;
+}
+.addInfo p {
+	font-family: 'GmarketSansLight';
+	font-size: 3vw;
+	color: #aaa;
+}
+.menu_item {
+	margin: 7vw auto;
+	text-align: center;
+}
+.menu_item input {
+	border: 0.3vw solid #777;
+	border-radius: 1vw;
+	background-color: white;
+	font-family: 'GmarketSansMedium';
+	font-size: 6vw;
+	color: #555;
+	width: 86.5vw;
+	padding: 3vw;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.menu_item input:hover {
+	background-color: #e8a761;
+	color: white;
+	border-color: #e8a761;
+}
+
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	article h2 {
+		font-size: 7vw;
+	}
+	.addInfo {
+		border: 0.2vw solid #777;
+	}
+	.addInfo img {
+		width: 40vw;
+		height: 40vw;
+		margin: 3vw auto;
+	}
+	.addInfo h4 {
+		font-size: 6vw;
+	}
+	.addInfo p {
+		font-size: 2vw;
+	}
+	.menu_item {
+		margin: 6vw auto;
+	}
+	.menu_item input {
+		border: 0.2vw solid #777;
+		font-size: 5vw;
+		padding: 2vw;
+	}
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	article h2 {
+		font-size: 64px;
+		margin: 24px auto 0 auto;
+	}
+	.addInfo {
+		border: 1px solid #777;
+		border-radius: 5px;
+		width: 800px;
+		padding: 20px 0 40px 0;
+		margin: 30px auto;
+	}
+	.addInfo img {
+		width: 200px;
+		height: 200px;
+		border: 1px solid #777;
+		border-radius : 200px;
+		margin: 30px auto;
+	}
+	.addInfo h4 {
+		font-size: 48px;
+	}
+	.addInfo p {
+		font-size: 18px;
+	}
+	.menu_item {
+		margin: 30px auto;
+	}
+	.menu_item input {
+		border: 1px solid #777;
+		border-radius: 6px;
+		font-size: 48px;
+		width: 805px;
+		padding: 15px;
+	}
+}
