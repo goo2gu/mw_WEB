@@ -7,6 +7,7 @@
 	<typeAliases>
 		<typeAlias type="com.mw.db.SVO" alias="svo" />
 		<typeAlias type="com.mw.db.MVO" alias="mvo" />
+		<typeAlias type="com.mw.db.QVO" alias="qvo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappings/mapper.xml" />

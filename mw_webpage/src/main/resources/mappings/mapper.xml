@@ -9,7 +9,6 @@
 		FROM mw_database.mw_members 
 		WHERE m_id = #{m_id} AND m_sns = '카카오'
 	</select>
-
 	<insert id="kakaoAdd" parameterType="mvo">
 		INSERT INTO 
 		mw_database.mw_members 
@@ -17,7 +16,6 @@
 				#{m_nickname}, #{m_profile_img}, #{m_thumbnail_img}, 
 				#{m_age_range}, #{m_gender}, SYSDATE())
 	</insert>
-	
 	<select id="kakaoLogin" parameterType="String" resultType="mvo">
 		SELECT * 
 		FROM mw_database.mw_members 
@@ -29,13 +27,12 @@
 		FROM mw_database.mw_stores 
 		ORDER BY s_view desc
 	</select>
- 
  	<select id="totalCount" resultType="int">
 		SELECT count(*) 
 		FROM mw_database.mw_stores;
 	</select>
 
-	<select id="adminList" parameterType="Map" resultType="svo">
+	<select id="adminStoreList" parameterType="Map" resultType="svo">
 		SELECT *
 		FROM (
 			SELECT 	@rownum:=@rownum+1 r_num,
@@ -47,22 +44,19 @@
 		) list
 		WHERE r_num BETWEEN #{begin} AND #{end}
 	</select>
-
-	<insert id="adminWrite" parameterType="svo">
+	<insert id="adminStoreWrite" parameterType="svo">
 		INSERT INTO
 		mw_database.mw_stores
 		VALUES(s_idx, #{s_name}, #{s_cat_b}, #{s_cat_s}, 
 				#{s_sub}, #{s_img}, #{s_hashtag}, #{s_location}, 
 				#{s_lat}, #{s_lng}, #{s_tel}, #{s_hour}, #{s_menu}, 0, 0, 0)
 	</insert>
-	
-	<select id="adminOnelist" parameterType="String" resultType="svo">
+	<select id="adminStoreOnelist" parameterType="String" resultType="svo">
 		SELECT * 
 		FROM mw_database.mw_stores 
 		WHERE s_idx = #{s_idx}
 	</select>
-	
-	<update id="adminUpdate" parameterType="svo">
+	<update id="adminStoreUpdate" parameterType="svo">
 		UPDATE mw_database.mw_stores 
 		SET s_name = #{s_name}, s_cat_b = #{s_cat_b}, s_cat_s = #{s_cat_s}, 
 			s_sub = #{s_sub}, s_img = #{s_img}, s_hashtag = #{s_hashtag}, 
@@ -70,11 +64,29 @@
 			s_tel = #{s_tel}, s_hour = #{s_hour}, s_menu = #{s_menu}
 		WHERE s_idx = #{s_idx}
 	</update>
-	
-	<delete id="adminDelete" parameterType="String">
+	<delete id="adminStoreDelete" parameterType="String">
 		DELETE FROM mw_database.mw_stores 
 		WHERE s_idx = #{s_idx}
 	</delete>
+	<select id="adminQna" resultType="qvo">
+		SELECT * 
+		FROM mw_database.mw_qna 
+		WHERE q_group = '0'
+		ORDER BY q_regdate desc
+	</select>
+	<select id="qnaWriter" parameterType="String" resultType="mvo">
+		SELECT * FROM mw_database.mw_members WHERE m_idx = #{m_idx}
+	</select>
+	<select id="qnaGroup" parameterType="String" resultType="String">
+		SELECT q_group FROM mw_database.mw_qna WHERE q_idx = #{q_idx}
+	</select>
+	<select id="adminQnaOnelist" parameterType="String" resultType="qvo">
+		SELECT * FROM mw_database.mw_qna WHERE q_group = #{q_group} ORDER BY q_step asc
+	</select>
+	<insert id="adminQnaReply">
+		INSERT INTO mw_database.mw_qna 
+		VALUES(q_idx, #{m_idx}, #{q_title}, #{q_content}, ${q_group}, 1, SYSDATE())
+	</insert>
 
 	<select id="search" parameterType="String" resultType="svo">
 		SELECT *
@@ -84,59 +96,59 @@
 				OR s_hashtag LIKE CONCAT('%', #{keyWord}, '%')
 				OR s_menu LIKE CONCAT('%', #{keyWord}, '%'))
 	</select>
-
-	<select id="catDri" resultType="svo">
-		SELECT * FROM mw_database.mw_stores WHERE s_cat_b = "마실거리"
+	
+	<select id="getEat" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_b = '먹을거리'
+	</select>
+	<select id="getDrink" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_b = '마실거리'
+	</select>
+	<select id="getPlay" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_b = '즐길거리'
+	</select>
+	<select id="getSmall" parameterType="String" resultType="svo">
+		SELECT *
+		FROM mw_database.mw_stores
+		WHERE s_cat_s = #{s_cat_s}
 	</select>
 	
-	<select id="catAl" resultType="svo">
-		SELECT * FROM mw_database.mw_stores WHERE s_cat_s = "술집"
-	</select>
-	
-	<select id="catCf" resultType="svo">
-		SELECT * FROM mw_database.mw_stores WHERE s_cat_s = "카페"
-	</select>
-
-	<update id="viewUpdate" parameterType="String">
-		UPDATE mw_database.mw_stores 
-		SET s_view = (s_view + 1) 
-		WHERE s_idx = #{s_idx}
-	</update>
-
 	<select id="storeInfo" parameterType="String" resultType="svo">
 		SELECT *
 		FROM mw_database.mw_stores
 		WHERE s_idx = #{s_idx}
 	</select>
-	
+	<update id="viewUpdate" parameterType="String">
+		UPDATE mw_database.mw_stores 
+		SET s_view = (s_view + 1) 
+		WHERE s_idx = #{s_idx}
+	</update>
 	<update id="likeUpdate" parameterType="String">
 		UPDATE mw_database.mw_stores 
 		SET s_like = (s_like + 1) 
 		WHERE s_idx = #{s_idx}
 	</update>
 
-	<select id="getEat" resultType="svo">
-		SELECT *
-		FROM mw_database.mw_stores
-		WHERE s_cat_b = '먹을거리'
+	<select id="qnaList" parameterType="String" resultType="qvo">
+		SELECT * 
+		FROM mw_database.mw_qna 
+		WHERE m_idx = #{m_idx}
 	</select>
 	
-	<select id="getDrink" resultType="svo">
-		SELECT *
-		FROM mw_database.mw_stores
-		WHERE s_cat_b = '마실거리'
-	</select>
+	<insert id="qnaWrite" parameterType="qvo">
+		INSERT INTO mw_database.mw_qna 
+		VALUES(q_idx, #{m_idx}, #{q_title}, #{q_content}, 0, 0, SYSDATE())
+	</insert>
 	
-	<select id="getPlay" resultType="svo">
-		SELECT *
-		FROM mw_database.mw_stores
-		WHERE s_cat_b = '즐길거리'
+	<select id="qnaOnelist" parameterType="String" resultType="qvo">
+		SELECT * 
+		FROM mw_database.mw_qna 
+		WHERE q_idx = #{q_idx}
 	</select>
-	
-	<select id="getSmall" parameterType="String" resultType="svo">
-		SELECT *
-		FROM mw_database.mw_stores
-		WHERE s_cat_s = #{s_cat_s}
-	</select>
- 
+
 </mapper>

@@ -37,10 +37,9 @@
 </head>
 
 <body>
-	
-	<div>
+	<header>
 		<jsp:include page="top.jsp" />
-	</div>
+	</header>
 	
 	<div class="wrap-all">
 		<div class="header">

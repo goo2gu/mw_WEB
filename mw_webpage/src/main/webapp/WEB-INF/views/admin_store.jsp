@@ -24,8 +24,10 @@
 </head>
 
 <body>
-	<div><jsp:include page="top.jsp" /></div>
-	<div class="wrap-all">
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
+	<article>
 		<div class="info">
 			<h2> 가게 관리 페이지 </h2>
 		</div>
@@ -91,7 +93,7 @@
 				</c:choose>
 			</div>
 		</div>
-	</div>
+	</article>
 
 </body>
 </html>

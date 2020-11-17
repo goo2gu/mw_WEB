@@ -1,39 +1,33 @@
 @charset "UTF-8";
 
-.info {
-	text-align: center;
-	margin-top: 3vw;
-}
-.info h2 {
-	font-family: 'GmarketSansBold';
-	color: #e8a761;
-	font-size: 8vw;
-}
-.btn {
-	font-family: 'GmarketSansLight';
-	display: flex;
-	justify-content: space-between;
-	width: 88%;
-	margin: 4vw auto 0 auto;
-}
-.btn div {
-	font-family: 'GmarketSansLight';
+article {
+	width: 90vw;
 	color: #444;
+	margin: 5vw auto 10vw auto;
+	text-align: center;
+}
+article h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
+	color: #e8a761;
+}
+.mainBtn {
+	font-family: 'GmarketSansLight';
+	color: #777;
 	font-size: 4vw;
+	transition: 0.3s;
 	cursor: pointer;
 }
-.btn div:hover {
+.mainBtn:hover {
 	color: #e8a761;
 }
-.store_list { 
-	margin: 1vw auto; 
-}
-table {
+table { 
 	font-family: 'GmarketSansLight';
 	width: 90%;
 	margin: 0 auto;
 	text-align: center;
 	border-collapse: collapse;
+	margin: 1vw auto; 
 }
 th,td {
 	border: 0.2vw solid #444;
@@ -45,10 +39,10 @@ th {
 	color: white;
 }
 th:first-child {
-	width: 16%;
+	width: 16vw;
 }
 th:last-child {
-	width: 21%;
+	width: 21vw;
 }
 td a { font-family: 'GmarketSansLight'; }
 td a:hover { color: #e8a761; }
@@ -60,35 +54,37 @@ td a:hover { color: #e8a761; }
 
 /* 576px 이상 tablet */
 @media (min-width: 576px){
-	td input {
-		border: 0.2vw solid #444;
-	}
+	
 }
 
 /* 992px 이상 PC */
 @media (min-width: 992px) {
-	.info { margin-top: 32px; }
-	.info h2 { font-size: 70px; }
-	.btn {
-		width: 780px;
-		margin: 32px auto 0 auto;
+	article {
+		width: 890px;
+		margin: 30px auto 50px auto;
 	}
-	.btn div {
-		font-size: 28px;
+	article h2 {
+		font-size: 64px;
+		margin: 0;
 	}
-	table { width: 800px; }
+	.mainBtn { font-size: 20px; }
+	table { 
+		width: 800px;
+		margin: 30px auto 200px auto; 
+	}
 	th,td {
-		border: 1px solid #444;
+		border: 0.1px solid #444;
+		padding: 5px;
+		font-size: 16px;
 	}
-	th { 
-		font-size: 28px;
-		padding: 20px;
+	th:first-child {
+		width: 200px;
 	}
-	th:first-child { width: 70px; }
-	th:last-child {	width: 100px; }
-	td { 
-		font-size: 28px;
-		padding: 24px;
+	th:last-child {
+		width: 240px;
+	}
+	.paging {
+		margin-top: 20px;
 	}
 	
 }

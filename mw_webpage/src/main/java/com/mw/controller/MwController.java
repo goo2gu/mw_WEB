@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mw.db.DAO;
 import com.mw.db.MVO;
+import com.mw.db.QVO;
 import com.mw.db.SVO;
 import com.mw.model.Paging;
 
@@ -181,22 +182,77 @@ public class MwController {
 	
 // 문의하기
 	
-	// 문의
+	// 문의 화면 이동
 	@RequestMapping("qna.do")
-	public ModelAndView qnaCommand() {
-		return new ModelAndView("qna");
+	public ModelAndView qnaCommand(HttpServletRequest request) {
+		ModelAndView mv = null;
+		try {
+			String loginCheck = (String) request.getSession().getAttribute("login");
+			System.out.println("로그인 상태 : " + loginCheck);
+			// 로그인 상태 체크
+			if (loginCheck == "ok") {
+				// 1. 로그인 > 문의 화면 이동
+				MVO mvo = (MVO) request.getSession().getAttribute("mvo");
+				String m_idx = mvo.getM_idx();
+				List<QVO> q_list = dao.getQlist(m_idx);
+				
+				mv = new ModelAndView("qna");
+				mv.addObject("q_list", q_list);
+				return mv;
+			} else {
+				// 2. 비로그인 > 로그인 화면 이동
+				mv = new ModelAndView("user_login");
+				return mv;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return null;
 	}
 	
 	// 문의 > 문의 작성
 	@RequestMapping("qna_write.do")
-	public ModelAndView qnaWriteCommand() {
-		return new ModelAndView("qna_write");
+	public ModelAndView qnaWriteCommand(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("qna_write");
+		MVO mvo = (MVO) request.getSession().getAttribute("mvo");
+		String m_idx = mvo.getM_idx();
+		mv.addObject("m_idx", m_idx);
+		return mv;
+	}
+	
+	// 문의 > 문의 작성 > DB 처리
+	@RequestMapping("qna_writeOk")
+	public ModelAndView qnaWriteOkCommand(HttpServletRequest request, QVO qvo) {
+		ModelAndView mv = new ModelAndView("redirect:qna.do");
+		try {
+			// q_group 값 생성
+			String q_group = qvo.getM_idx() + qvo.getQ_title().substring(0, 7) + qvo.getQ_content().substring(0, 7);
+			qvo.setQ_group(q_group);
+			System.out.println("q_group : " + q_group);
+			// DB 저장
+			dao.getQnaWrite(qvo);
+			System.out.println("문의 작성 완료.");
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return mv;
 	}
 	
 	// 문의 > 문의 상세
 	@RequestMapping("qna_onelist.do")
-	public ModelAndView qnaOnelistCommand() {
-		return new ModelAndView("qna_onelist");
+	public ModelAndView qnaOnelistCommand(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("qna_onelist");
+		String q_idx = request.getParameter("q_idx");
+		try {
+			QVO qvo = dao.getQnaOnelist(q_idx);
+			if (qvo != null) {
+				mv.addObject("qvo", qvo);
+			}
+			return mv;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return null;
 	}
 	
 // 내정보
@@ -211,12 +267,10 @@ public class MwController {
 			// 로그인 상태 체크
 			if (loginCheck == "ok") {
 				// 1. 로그인된 경우 > 내정보
-				mv = new ModelAndView("user_info");
-				return mv;
+				return new ModelAndView("user_info");
 			} else {
 				// 2. 로그인
-				mv = new ModelAndView("user_login");
-				return mv;
+				return new ModelAndView("user_login");
 			}
 		} catch (Exception e) {
 			System.out.println(e);
@@ -240,13 +294,13 @@ public class MwController {
 
 	// 관리자 페이지
 	@RequestMapping("admin.do")
-	public ModelAndView adminCommand(HttpServletRequest request, HttpSession session) {
+	public ModelAndView adminCommand(HttpServletRequest request) {
 		return new ModelAndView("admin");
 	}
 	
 	// 관리자 페이지 > 가게 관리
 	@RequestMapping("admin_store.do")
-	public ModelAndView adminStoreCommand(HttpServletRequest request, HttpSession session) {
+	public ModelAndView adminStoreCommand(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("admin_store");
 		try {
 			// 전체 게시물 수 (totalRecord)
@@ -292,13 +346,13 @@ public class MwController {
 
 	// 관리자 페이지 > 가게 관리 > 가게 추가
 	@RequestMapping("adminStoreAdd.do")
-	public ModelAndView adminStoreAddCommand(HttpServletRequest request, HttpSession session) {
+	public ModelAndView adminStoreAddCommand(HttpServletRequest request) {
 		return new ModelAndView("admin_store_add");
 	}
 	
 	// 관리자 페이지 > 가게 관리 > 가게 추가 > DB
 	@RequestMapping(value = "storeAddOk.do", method = RequestMethod.POST)
-	public ModelAndView adminStoreAddOkCommand(HttpServletRequest request, HttpSession session, SVO svo) {
+	public ModelAndView adminStoreAddOkCommand(HttpServletRequest request, SVO svo) {
 		ModelAndView mv = new ModelAndView("redirect:admin_store.do");
 		try {
 			// 파일 이름 처리
@@ -338,14 +392,13 @@ public class MwController {
 	
 	// 관리자 페이지 > 가게 관리 > 가게 상세 정보
 	@RequestMapping("admin_store_onelist.do")
-	public ModelAndView adminStoreOneelistCommand(HttpServletRequest request, HttpSession session, @RequestParam("cPage") String cPage) {
+	public ModelAndView adminStoreOneelistCommand(HttpServletRequest request, @RequestParam("cPage") String cPage) {
 		ModelAndView mv = new ModelAndView("admin_store_onelist");
 		String s_idx = request.getParameter("s_idx");
 		try {
 			SVO svo = dao.getAdminOnelist(s_idx);
 			// 가게 정보 및 cPage 정보 session 에 저장
 			request.getSession().setAttribute("svo", svo);
-			request.getSession().setAttribute("cPage", cPage);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -354,7 +407,7 @@ public class MwController {
 	
 	// 관리자 페이지 > 가게 관리 > 가게 상세 정보 > 정보 수정
 	@RequestMapping("admin_store_update.do")
-	public ModelAndView adminStoreUpdateCommand(HttpServletRequest request, HttpSession session, @RequestParam("cPage")String cPage) {
+	public ModelAndView adminStoreUpdateCommand(HttpServletRequest request, @RequestParam("cPage")String cPage) {
 		return new ModelAndView("admin_store_update");
 	}
 	
@@ -401,13 +454,13 @@ public class MwController {
 	
 	// 관리자 페이지 > 가게 관리 > 가게 상세 정보 > 삭제
 	@RequestMapping("admin_store_delete.do")
-	public ModelAndView adminStoreDeleteCommand(HttpServletRequest request, HttpSession session, @RequestParam("cPage")String cPage) {
+	public ModelAndView adminStoreDeleteCommand(HttpServletRequest request, @RequestParam("cPage")String cPage) {
 		return new ModelAndView("admin_store_delete");
 	}
 	
 	// 관리자 페이지 > 가게 관리 > 가게 상세 정보 > 삭제 > DB 처리
 	@RequestMapping("store_delete_ok.do")
-	public ModelAndView storeDeleteOkCommand(HttpServletRequest request, HttpSession session, @RequestParam("cPage")String cPage) {
+	public ModelAndView storeDeleteOkCommand(HttpServletRequest request, @RequestParam("cPage")String cPage) {
 		String s_idx = request.getParameter("s_idx");
 		ModelAndView mv =  new ModelAndView("redirect:admin_store.do");
 		try {
@@ -422,8 +475,99 @@ public class MwController {
 	
 	// 관리자 페이지 > 문의 관리
 	@RequestMapping("admin_qna.do")
-	public ModelAndView adminQnaCommand(HttpServletRequest request, HttpSession session) {
-		return new ModelAndView("admin_qna");
+	public ModelAndView adminQnaCommand(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("admin_qna");
+		try {
+			// 전체 게시물 수 (totalRecord)
+			int count = dao.getTotalCount();
+			paging.setTotalRecord(count);
+			// 전체 페이지 수 (totalPage)
+			if (paging.getTotalRecord() <= paging.getNumPerPage()) {
+				paging.setTotalPage(1);
+			} else {
+				paging.setTotalPage(paging.getTotalRecord()/paging.getNumPerPage());
+				if (paging.getTotalRecord() % paging.getNumPerPage()!=0) {
+					paging.setTotalPage(paging.getTotalPage()+1);
+				}
+			}
+			// 현재 페이지 구하기 (nowPage)
+			cPage = request.getParameter("cPage");
+			if (cPage == null) {
+				paging.setNowPage(1);
+			} else {
+				paging.setNowPage(Integer.parseInt(cPage));
+			}
+			mv.addObject("cPage", cPage);
+			// 시작 번호 (begin), 끝 번호 (end)
+			paging.setBegin((paging.getNowPage()-1) * paging.getNumPerPage()+1);
+			paging.setEnd((paging.getBegin()-1) + paging.getNumPerPage());
+			
+			// 문의 리스트 불러오기
+			List<QVO> list = dao.getQnaList();
+			
+			// 시작 블록 (beginBlock), 끝 블록 (endBlock)
+			paging.setBeginBlock(
+					(int)((paging.getNowPage()-1) / paging.getPagePerBlock()) * paging.getPagePerBlock() + 1);
+			paging.setEndBlock(paging.getBeginBlock() + paging.getPagePerBlock()-1);
+			// 블록 처리 >> endBlock 이 totalPage 보다 큰 경우,
+			if (paging.getEndBlock() > paging.getTotalPage()) {
+				paging.setEndBlock(paging.getTotalPage());
+			}
+			mv.addObject("list", list);
+			mv.addObject("paging", paging);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return mv;
 	}
+	
+	// 관리자 페이지 > 문의 관리 > 문의 상세
+	@RequestMapping("admin_qna_onelist.do")
+	public ModelAndView adminQnaOnelistCommand(HttpServletRequest request, @RequestParam("cPage")String cPage) {
+		ModelAndView mv = new ModelAndView("admin_qna_onelist");
+		try {
+			String q_idx = request.getParameter("q_idx");
+			String m_idx = request.getParameter("m_idx");
+			// group 고유값 추출
+			String qnaGroup = dao.getQnaGroup(q_idx);
+			// 작성자 정보 추출
+			MVO mvo = dao.getQnaWriter(m_idx);
+			String m_nickname = mvo.getM_nickname();
+			// group 값에 해당되는 Q&A 추출
+			List<QVO> q_list = dao.getAdminQnaOnelist(qnaGroup);
+			mv.addObject("q_list", q_list);
+			mv.addObject("m_nickname", m_nickname);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return mv;
+	}
+	
+	// 관리자 페이지 > 문의 관리 > 문의 상세 > 답변 작성
+	@RequestMapping("admin_qna_reply.do")
+	public ModelAndView adminQnaReplyCommand(HttpServletRequest request, @RequestParam("cPage")String cPage) {
+		ModelAndView mv = new ModelAndView("admin_qna_reply");
+		String q_group = request.getParameter("q_group");
+		String q_title = request.getParameter("q_title");
+		mv.addObject("q_group", q_group);
+		mv.addObject("q_title", q_title);
+		return mv;
+	}
+	
+	// 관리자 페이지 > 문의 관리 > 문의 상세 > 답변 작성 > DB 처리
+	@RequestMapping("admin_qna_reply_ok.do")
+	public ModelAndView adminQnaReplyOkCommand(HttpServletRequest request, QVO qvo, @RequestParam("cPage")String cPage) {
+		ModelAndView mv = new ModelAndView("redirect:admin_qna.do");
+		try {
+			int res = dao.getQnaReply(qvo);
+			if (res > 0) {
+				return mv;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return null;
+	}
+	
 	
 }

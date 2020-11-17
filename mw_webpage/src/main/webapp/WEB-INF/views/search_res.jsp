@@ -35,7 +35,9 @@
 </head>
 
 <body>
-	<div><jsp:include page="top.jsp" /></div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
 	
 	<!-- 검색창 이벤트 처리 -->
 	<script type="text/javascript">

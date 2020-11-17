@@ -1,116 +1,70 @@
 @charset "UTF-8";
 
-.wrap-all {
-	width: 90%;
+article {
+	width: 90vw;
 	color: #444;
-	margin: 3vw auto 10vw auto;
-}
-
-.info {
+	margin: 5vw auto 10vw auto;
 	text-align: center;
 }
-
-.info img {
-	padding: 12vw 0 5vw 0;
-	width: 40%;
-}
-
-.info h2 {
+article h2 {
 	font-family: 'GmarketSansBold';
 	font-size: 8vw;
-	color: #444;
+	color: #e8a761;
 }
-
-.info h4 {
-	font-family: 'GmarketSansLight';
-	font-size: 3vw;
-	color: #777;
-}
-
 .menu_item {
 	margin: 7vw 0;
 	text-align: center;
+	display: flex;
+	justify-content: center;
 }
-
 .menu_item input {
-	border: 2px solid #e8a761;
-	border-radius: 10px;
+	border: 0.2vw solid #e8a761;
+	border-radius: 2vw;
 	background-color: #e8a761;
 	font-family: 'GmarketSansBold';
 	font-size: 6vw;
 	color: white;
-	width: 60%;
+	width: 60vw;
 	padding: 2vw;
 	-webkit-appearance: none;
 	-webkit-border-radius: 2vw;
+	transition: 0.3s;
 	cursor: pointer;
 }
-
 .menu_item input:hover {
-	background-color: #e8a761;
-	color: white;
+	background-color: white;
+	color: #e8a761;
 	border-color: #e8a761;
 }
 
 /* 576px 이상 tablet */
 @media ( min-width : 576px) {
-	.info img {
-		padding: 2vw 0 5vw 0;
-		width: 24%;
-	}
-	.info h2 {
-		font-size: 8vw;
+	h2 {
+		font-size: 7vw;
 	}
 	.menu_item {
 		margin: 6vw 0;
 	}
 	.menu_item input {
 		font-size: 5vw;
-		width: 50%;
+		width: 60vw;
 		padding: 2vw;
 	}
 }
 
 /* 992px 이상 PC */
 @media ( min-width : 992px) {
-	.wrap-all {
+	article {
 		width: 890px;
-		margin: 0 auto;
+		margin: 30px auto 50px auto;
 	}
-	.info {
-		margin: 50px 0;
-		border: 0;
-		border-radius: 5px;
-		display: flex;
-		justify-content: center;
-	}
-	.info h2 { font-size: 56px; }
-	.profile_text {
-		margin: auto 0 auto 100px;
-		display: flex;
-		flex-flow: column;
-		justify-content: space-between;
-		height: 100px;
-	}
-	.profile_text h2 {
-		font-size: 60px;
-		text-align: left;
-	}
-	.profile_text h4 {
-		font-size: 16px;
-	}
-	
-	.menu_item {
-		margin: 30px 0;
-	}
-	
+	article h2 { font-size: 64px; }
+	.menu_item { margin: 40px 0; }
 	.menu_item input {
-		font-size: 40px;
-		padding: 20px;
-		width: 50%;
-		color: white;
+		border: 2px solid #e8a761;
+		font-size: 36px;
+		width: 450px;
+		padding: 15px;
+		-webkit-border-radius: 10px;
 	}
-	
-	
-	
 }

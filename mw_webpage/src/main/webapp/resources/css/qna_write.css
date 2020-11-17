@@ -1,27 +1,25 @@
 @charset "UTF-8";
 
-.wrap-all {
-	width: 90%;
-	margin: 0 auto;
-	color: #444;
-}
-form {
+article {
+	width: 90vw;
+	margin: 5vw auto 10vw auto;
+	color: #e8a761;
 	text-align: center;
 }
-.qna_title {
-	margin: 5vw auto 0 auto;
-}
-.qna_title h2 {
+article h2 {
 	font-family: 'GmarketSansBold';
-	font-size: 8vw;
+	color: #e8a761;
+	font-size: 9vw;
+	text-align: center;
 }
 .qna_title input {
-	margin: 10vw 0 5vw 0;
-	width: 88%;
+	margin: 5vw auto;
+	width: 80vw;
 	font-family: 'GmarketSansLight';
-	font-size: 6vw;
-	padding: 0 0 0 2vw;
-	border: 0.2vw solid #444;
+	font-size: 4.5vw;
+	color: #444;
+	padding: 0 0 1vw 2vw;
+	border: 0.2vw solid #777;
 	border-left-width:0;
 	border-right-width:0;
 	border-top-width:0;
@@ -39,20 +37,20 @@ form {
 	text-align: center;
 }
 .qna_context textarea {
-	width: 80%;
-	height: 60vw;
-	padding: 5%;
+	width: 76vw;
+	height: 65vw;
+	padding: 3vw;
 	font-family: 'GmarketSansLight';
-	font-size: 5vw;
-	border: 0.2vw solid #444;
-	border-radius: 7px;
+	font-size: 3.5vw;
+	color: #444;
+	border: 0.2vw solid #777;
+	border-radius: 1vw;
 	-webkit-appearance: none;
-	-webkit-border-radius: 0;
 }
 .qna_context textarea::placeholder {
 	font-family: 'GmarketSansLight';
 	text-align: center;
-	font-size: 6vw;
+	font-size: 5vw;
 }
 .qna_context textarea:focus::-webkit-input-placeholder {
 	color: transparent;
@@ -60,19 +58,25 @@ form {
 .qna_submit {
 	display: flex;
 	justify-content: center;
+	width: 87vw;
+	margin: 0 auto;
 }
 .qna_submit input {
-	font-family: 'GmarketSansBold';
-	padding: 3vw;
+	font-family: 'GmarketSansMedium';
+	padding: 2vw 0;
 	margin: 2vw;
 	width: 39vw;
-	font-size: 7vw;
+	font-size: 6vw;
 	background: #e8a761;
 	color: white;
-	border: 0.2vw solid #444;
-	border-radius: 5px;
-	-webkit-appearance: button;
+	border: 0.3vw solid #e8a761;
+	border-radius: 1vw;
 	cursor: pointer;
+	transition: 0.3s;
+}
+.qna_submit input:hover {
+	background-color: white;
+	color: #e8a761;
 }
 
 /* 576px 이상 tablet */
@@ -102,7 +106,7 @@ form {
 
 /* 992px 이상 PC */
 @media (min-width: 992px) {
-	.wrap-all {
+	.article {
 		width: 890px;
 		margin: 0 auto;
 	}
@@ -111,7 +115,7 @@ form {
 		margin: 20px 0 0 0;
 		text-align: center;
 	}
-	.qna_title h2 { font-size: 70px; }
+	.qna_title h2 { font-size: 64px; }
 	.qna_title input {
 		width: 80%;
 		margin: 40px auto;
