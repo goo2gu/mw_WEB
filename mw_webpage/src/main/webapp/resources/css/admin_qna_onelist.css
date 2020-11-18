@@ -4,20 +4,18 @@ article {
 	width: 90vw;
 	color: #444;
 	margin: 5vw auto 10vw auto;
-	text-align: center;
 }
 article h2 {
 	font-family: 'GmarketSansBold';
 	font-size: 8vw;
 	color: #e8a761;
+	text-align: center;
 }
 table { 
 	font-family: 'GmarketSansLight';
-	width: 90%;
-	margin: 0 auto;
-	text-align: center;
+	width: 90vw;
 	border-collapse: collapse;
-	margin: 1vw auto; 
+	margin: 3vw auto 2vw auto;
 }
 th,td {
 	border: 0.2vw solid #444;
@@ -25,26 +23,35 @@ th,td {
 	font-size: 4vw;
 }
 th { 
-	font-family: 'GmarketSansMedium';
 	background-color: #e8a761;
 	color: white;
+	text-align: center;
+	width: 18vw;
 }
+td {
+	padding: 2.5vw;
+}
+pre { font-family: 'GmarketSansLight'; }
 .onelistBtn {
-	
+	text-align: right;
 }
 .onelistBtn input {
-	font-family: 'GmarketSansMedium';
+	font-family: 'GmarketSansLight';
 	border: 0.2vw solid #e8a761;
 	background-color: #e8a761;
 	color: white;
-	font-size: 5vw;
-	width: 20vw;
+	font-size: 4vw;
 	text-align: center;
-	padding: 1vw 0 0 0;
-	margin: 3vw;
+	padding: 1.5vw 3vw;
+	margin: 1vw;
 	-webkit-appearance: none;
 	-webkit-border-radius: 1vw;
 	cursor: pointer;
+	transition: 0.3s;
+}
+.onelistBtn input:hover {
+	background-color: white;
+	color: #e8a761;
 }
 
 /* 576px 이상 tablet */
@@ -56,35 +63,40 @@ th {
 
 /* 992px 이상 PC */
 @media (min-width: 992px) {
-	.table_title { margin-top: 32px; }
-	.table_title h2 { 
-		font-size: 70px;
-		margin: 40px 0; 
+	article {
+		width: 890px;
+		margin: 30px auto 50px auto;
+	}
+	article h2 {
+		font-size: 64px;
+		margin: 0;
 	}
 	table { 
-		width: 800px; 
-		margin-bottom: 100px;
+		border: 1px solid #444;
+		width: 880px; 
+		margin: 30px auto 20px auto;
 	}
 	th,td {
 		border: 1px solid #444;
+		padding: 10px;
+		font-size: 24px;
 	}
 	th { 
-		width: 123px;
-		font-size: 28px;
-		padding: 15px;
+		width: 120px;
+		font-size: 24px;
 	}
 	td { 
-		padding: 15px;
-		font-size: 0;
-		height: 80px;
+		font-size: 24px;
+		padding: 16px 20px;
 	}
 	td p { 
 		font-size: 24px;
 	}
 	.onelistBtn input {
-		font-size: 36px;
-		width: 200px;
-		padding: 8px 0 0 0;
+		border: 1.5px solid #e8a761;
+		border-radius: 5px;
+		font-size: 24px;
+		padding: 6px 10px 4px 10px;
 		margin: 3px;
 	}
 }

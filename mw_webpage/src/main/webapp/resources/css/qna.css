@@ -32,7 +32,7 @@ article h2 {
 .no_qna {
 	border: 0.2vw solid #777;
 	border-radius: 2vw;
-	font-family: 'GmarketSansMedium';
+	font-family: 'GmarketSansLight';
 	font-size: 5vw;
 	text-align: center;
 	color: #777;
@@ -40,19 +40,19 @@ article h2 {
 }
 .qna_list {
 	color: #444;
-	margin-top: 5vw;
-	border: 0.1vw solid #444;
-	border-left-width: 0;
-	border-right-width: 0;
-	border-top-width: 0;
-	border-bottom-width: 1;
-	transition: 0.3s;
-	cursor: pointer;
+	margin-top: 4vw;
 }
 .qna_one {
 	display: flex;
 	justify-content: space-between;
+	border: 0.2vw solid #444;
 	margin: 3vw 1vw;
+	border-left-width:0;
+	border-right-width:0;
+	border-top-width:0;
+	border-bottom-width:1;
+	transition: 0.3s;
+	cursor: pointer;
 }
 .qna_one h4 {
 	font-family: 'GmarketSansLight';
@@ -102,20 +102,23 @@ article h2 {
 		padding: 200px 50px;
 	}
 	.qna_list {
-		margin: 10px 0 50px 0;
-		border: 1px solid #444;
-		border-radius: 10px;
-		width: 100%;
-	}
-	.qna_list:hover {
-		background-color: #e8a761;
-		border-color: #e8a761;
+		margin: 10px 0;
+		width: 860px;
 	}
 	.qna_one {
-		margin: 30px 10px;
-		padding: 0 30px;
+		border: 1px solid #444;
+		border-radius: 3px;
+		padding: 25px 30px;
+		margin: 30px 0;
+	}
+	.qna_one:hover {
+		background-color: #e8a761;
+		color: white;
 	}
 	.qna_one h4 { font-size: 28px; }
-	.qna_one p { font-size: 16px; }
+	.qna_one p { 
+		color: #777;
+		font-size: 16px; 
+	}
 	
 }

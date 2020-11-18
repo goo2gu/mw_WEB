@@ -35,9 +35,9 @@ public class DAO {
 	}
 	
 	// 관리자 페이지 - 전체 게시물 수
-	public int getTotalCount() throws Exception {
+	public int getStoreTotal() throws Exception {
 		int res = 0;
-		res = sqlSessionTemplate.selectOne("totalCount");		
+		res = sqlSessionTemplate.selectOne("storeTotal");		
 		return res;
 	}
 	// 관리자 페이지 - 가게 리스트
@@ -71,6 +71,13 @@ public class DAO {
 	public void getDeleteStore(String s_idx) throws Exception {
 		sqlSessionTemplate.delete("adminStoreDelete", s_idx);
 	}
+	
+	// 관리자 페이지 - 전체 게시물 수
+	public int getQnaTotal() throws Exception {
+		int res = 0;
+		res = sqlSessionTemplate.selectOne("qnaTotal");		
+		return res;
+	}
 	// 관리자 페이지 - 문의 관리
 	public List<QVO> getQnaList(int begin, int end) throws Exception {
 		List<QVO> list = null;
@@ -98,7 +105,7 @@ public class DAO {
 		q_list = sqlSessionTemplate.selectList("adminQnaOnelist", qnaGroup);
 		return q_list;
 	}
-	// 관리자 페이지 - 답변
+	// 관리자 페이지 - 문의 답변
 	public int getQnaReply(QVO qvo) throws Exception {
 		int res = 0;
 		res = sqlSessionTemplate.insert("adminQnaReply", qvo);

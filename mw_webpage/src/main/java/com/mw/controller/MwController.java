@@ -230,9 +230,9 @@ public class MwController {
 			// q_group 값 생성
 			String m_idx = qvo.getM_idx();
 			Calendar cal = Calendar.getInstance();
-			SimpleDateFormat date = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+			SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd_HHmmss");
 			String now = date.format(cal.getTime());
-			String q_group = m_idx + "_" + now;
+			String q_group = m_idx + now;
 			System.out.println("q_group : " + q_group);
 			qvo.setQ_group(q_group);
 			// DB 저장
@@ -291,10 +291,22 @@ public class MwController {
 	}
 	
 	// 내정보 > 정보 수정
+	@RequestMapping("user_update.do")
+	public ModelAndView userInfoUpdateCommand() {
+		return new ModelAndView("user_update");
+	}
 	
 	// 내정보 > 좋아요
+	@RequestMapping("user_like.do")
+	public ModelAndView userLikeCommand() {
+		return new ModelAndView("user_like");
+	}
 	
 	// 내정보 > 내 리뷰
+	@RequestMapping("user_review.do")
+	public ModelAndView userReviewCommand() {
+		return new ModelAndView("user_review");
+	}
 	
 // 관리자 페이지	
 
@@ -310,7 +322,7 @@ public class MwController {
 		ModelAndView mv = new ModelAndView("admin_store");
 		try {
 			// 전체 게시물 수 (totalRecord)
-			int count = dao.getTotalCount();
+			int count = dao.getStoreTotal();
 			paging.setTotalRecord(count);
 			// 전체 페이지 수 (totalPage)
 			if (paging.getTotalRecord() <= paging.getNumPerPage()) {
@@ -485,7 +497,7 @@ public class MwController {
 		ModelAndView mv = new ModelAndView("admin_qna");
 		try {
 			// 전체 게시물 수 (totalRecord)
-			int count = dao.getTotalCount();
+			int count = dao.getQnaTotal();
 			paging.setTotalRecord(count);
 			// 전체 페이지 수 (totalPage)
 			if (paging.getTotalRecord() <= paging.getNumPerPage()) {
@@ -503,7 +515,6 @@ public class MwController {
 			} else {
 				paging.setNowPage(Integer.parseInt(cPage));
 			}
-			mv.addObject("cPage", cPage);
 			// 시작 번호 (begin), 끝 번호 (end)
 			paging.setBegin((paging.getNowPage()-1) * paging.getNumPerPage()+1);
 			paging.setEnd((paging.getBegin()-1) + paging.getNumPerPage());
@@ -518,6 +529,7 @@ public class MwController {
 			}
 			mv.addObject("list", list);
 			mv.addObject("paging", paging);
+			mv.addObject("cPage", cPage);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -528,22 +540,21 @@ public class MwController {
 	@RequestMapping("admin_qna_onelist.do")
 	public ModelAndView adminQnaOnelistCommand(HttpServletRequest request, @RequestParam("cPage")String cPage) {
 		ModelAndView mv = new ModelAndView("admin_qna_onelist");
+		String q_idx = request.getParameter("q_idx");
+		String m_idx = request.getParameter("m_idx");
 		try {
-			String q_idx = request.getParameter("q_idx");
-			String m_idx = request.getParameter("m_idx");
-			// group 고유값 추출
+			// q_group 고유값 추출
 			String qnaGroup = dao.getQnaGroup(q_idx);
-			// 작성자 정보 추출
-			MVO mvo = dao.getQnaWriter(m_idx);
-			String m_nickname = mvo.getM_nickname();
-			// group 값에 해당되는 Q&A 추출
+			// q_group 에 해당되는 Q&A 추출
 			List<QVO> q_list = dao.getAdminQnaOnelist(qnaGroup);
-			mv.addObject("q_list", q_list);
-			mv.addObject("m_nickname", m_nickname);
+			// 변수값 저장
+			request.getSession().setAttribute("q_list", q_list);
+			mv.addObject("cPage", cPage);
+			return mv;
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return mv;
+		return null;
 	}
 	
 	// 관리자 페이지 > 문의 관리 > 문의 상세 > 답변 작성
@@ -554,6 +565,7 @@ public class MwController {
 		String q_title = request.getParameter("q_title");
 		mv.addObject("q_group", q_group);
 		mv.addObject("q_title", q_title);
+		mv.addObject("cPage", cPage);
 		return mv;
 	}
 	
@@ -562,14 +574,18 @@ public class MwController {
 	public ModelAndView adminQnaReplyOkCommand(HttpServletRequest request, QVO qvo, @RequestParam("cPage")String cPage) {
 		ModelAndView mv = new ModelAndView("redirect:admin_qna.do");
 		try {
+			System.out.println(qvo.getQ_title());
+			System.out.println(qvo.getQ_content());
+			System.out.println(qvo.getQ_group());
+			System.out.println(cPage);
 			int res = dao.getQnaReply(qvo);
 			if (res > 0) {
-				return mv;
+				mv.addObject("cPage", cPage);
 			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return null;
+		return mv;
 	}
 	
 	

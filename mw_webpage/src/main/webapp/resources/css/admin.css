@@ -6,17 +6,20 @@ article {
 	margin: 5vw auto 10vw auto;
 	text-align: center;
 }
+
 article h2 {
 	font-family: 'GmarketSansBold';
 	font-size: 8vw;
 	color: #e8a761;
 }
+
 .menu_item {
 	margin: 7vw 0;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 }
+
 .menu_item input {
 	border: 0.2vw solid #e8a761;
 	border-radius: 2vw;
@@ -31,6 +34,7 @@ article h2 {
 	transition: 0.3s;
 	cursor: pointer;
 }
+
 .menu_item input:hover {
 	background-color: white;
 	color: #e8a761;
@@ -39,12 +43,8 @@ article h2 {
 
 /* 576px 이상 tablet */
 @media ( min-width : 576px) {
-	h2 {
-		font-size: 7vw;
-	}
-	.menu_item {
-		margin: 6vw 0;
-	}
+	h2 { font-size: 7vw; }
+	.menu_item { margin: 6vw 0; }
 	.menu_item input {
 		font-size: 5vw;
 		width: 60vw;
@@ -58,8 +58,12 @@ article h2 {
 		width: 890px;
 		margin: 30px auto 50px auto;
 	}
-	article h2 { font-size: 64px; }
-	.menu_item { margin: 40px 0; }
+	article h2 {
+		font-size: 64px;
+	}
+	.menu_item {
+		margin: 40px 0;
+	}
 	.menu_item input {
 		border: 2px solid #e8a761;
 		font-size: 36px;

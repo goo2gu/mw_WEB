@@ -30,6 +30,7 @@ th {
 	width: 15vw;
 }
 td { padding: 2vw 3vw; }
+pre { font-family: 'GmarketSansLight'; }
 .btn { text-align: right; }
 .btn input {
 	font-family: 'GmarketSansMedium';

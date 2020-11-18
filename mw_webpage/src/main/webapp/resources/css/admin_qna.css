@@ -15,7 +15,6 @@ article h2 {
 	font-family: 'GmarketSansLight';
 	color: #777;
 	font-size: 4vw;
-	margin-left: 5vw;
 	display: flex;
 	justify-content: flex-start;
 	transition: 0.3s;
@@ -35,8 +34,7 @@ table {
 th,td {
 	border: 0.2vw solid #444;
 	padding: 2vw;
-	font-size: 4vw;
-	color: #444;
+	font-size: 3.5vw;
 }
 th { 
 	background-color: #e8a761;
@@ -48,6 +46,7 @@ th:first-child {
 th:last-child {
 	width: 21vw;
 }
+td { color: #444; }
 td a { font-family: 'GmarketSansLight'; }
 td a:hover { color: #e8a761; }
 .paging {
@@ -55,10 +54,20 @@ td a:hover { color: #e8a761; }
 	margin-top: 3vw;
 	text-align: center;
 }
+.paging b { color: #e8a761; }
+.paging a:hover {
+	color: #e8a761;
+}
 
 /* 576px 이상 tablet */
 @media (min-width: 576px){
-	
+	.mainBtn {
+		font-size: 3vw;
+	}
+	th,td {
+		padding: 1.5vw;
+		font-size: 3vw;
+	}
 }
 
 /* 992px 이상 PC */
@@ -74,14 +83,14 @@ td a:hover { color: #e8a761; }
 	.mainBtn { 
 		font-size: 24px;
 		margin-left: 10px;
-		margin-top: 36px;
+		margin-top: 12px;
 	}
 	table { 
 		width: 880px;
 		margin: 10px auto 20px auto;
 	}
 	th,td {
-		border: 0.1px solid #444;
+		border: 1px solid #444;
 		padding: 10px;
 		font-size: 24px;
 	}

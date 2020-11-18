@@ -14,10 +14,11 @@
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="/resources/css/user_info.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
-	function my_info() { location.href = "my_info.do"; }
-	function my_like() { location.href = "my_like.do"; }
-	function my_review() { location.href = "my_review.do"; }
+	function user_update() { location.href = "user_update.do"; }
+	function user_like() { location.href = "user_like.do"; }
+	function user_review() { location.href = "user_review.do"; }
 </script>
 </head>
 
@@ -35,13 +36,13 @@
 		</div>
 		<div class="user_menu">
 			<div class="menu_item">
-				<input type="button" value="정보 수정" onclick="my_info()">
+				<input type="button" value="정보 수정" onclick="user_update()">
 			</div>
 			<div class="menu_item">
-				<input type="button" value="좋아요" onclick="my_like()">
+				<input type="button" value="좋아요" onclick="user_like()">
 			</div>
-			<div class="menu_item" style="padding-bottom: 20px;">
-				<input type="button" value="내 리뷰" onclick="my_review()">
+			<div class="menu_item">
+				<input type="button" value="내 리뷰" onclick="user_review()">
 			</div>
 		</div>
 	</article>

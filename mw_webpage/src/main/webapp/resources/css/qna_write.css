@@ -142,15 +142,20 @@ article h2 {
 	}
 	.qna_context textarea::placeholder {
 		font-size: 32px;
-		padding-top: 90px;
+		padding-top: 150px;
 	}
-	.qna_submit { width: 820px; }
+	.qna_submit { 
+		width: 820px; 
+		justify-content: flex-end;
+		margin-right: 36px;
+	}
 	.qna_submit input {
-		font-size: 40px;
-		padding: 12px 10px 7px 10px;
-		height: 92px;
-		width: 365px;
-		margin: 20px;
+		font-family: 'GmarketSansLight';
+		font-size: 28px;
+		padding: 6px 0 0 0;
+		width: 100px;
+		height: 50px;
+		margin: 10px;
 		border: 2px solid #e8a761;
 		border-radius: 5px;
 	}

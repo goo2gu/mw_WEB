@@ -43,7 +43,7 @@
 						<th colspan="2">내용</th>
 					</tr>
 					<tr>
-						<td class="context" colspan="2">${k.q_content}</td>
+						<td class="context" colspan="2"><pre>${k.q_content}</pre></td>
 					</tr>
 				</tbody>
 			</table>

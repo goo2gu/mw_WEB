@@ -27,11 +27,11 @@
 		FROM mw_database.mw_stores 
 		ORDER BY s_view desc
 	</select>
- 	<select id="totalCount" resultType="int">
+	
+ 	<select id="storeTotal" resultType="int">
 		SELECT count(*) 
 		FROM mw_database.mw_stores;
 	</select>
-
 	<select id="adminStoreList" parameterType="Map" resultType="svo">
 		SELECT *
 		FROM (
@@ -68,6 +68,10 @@
 		DELETE FROM mw_database.mw_stores 
 		WHERE s_idx = #{s_idx}
 	</delete>
+	<select id="qnaTotal" resultType="int">
+		SELECT count(*) 
+		FROM mw_database.mw_qna;
+	</select>
 	<select id="adminQnaList" parameterType="Map" resultType="qvo">
 		SELECT *
 		FROM (
@@ -75,7 +79,7 @@
 					A.*
 			FROM 	mw_database.mw_qna A,
 					(SELECT @ROWNUM := 0) R
-			WHERE 	1=1
+			WHERE 	1=1 AND q_step = 0
 			ORDER BY q_regdate DESC
 		) list
 		WHERE r_num BETWEEN #{begin} AND #{end}
@@ -87,11 +91,14 @@
 		SELECT q_group FROM mw_database.mw_qna WHERE q_idx = #{q_idx}
 	</select>
 	<select id="adminQnaOnelist" parameterType="String" resultType="qvo">
-		SELECT * FROM mw_database.mw_qna WHERE q_group = #{q_group} ORDER BY q_step asc
+		SELECT * 
+		FROM mw_database.mw_qna 
+		WHERE q_group = #{q_group} 
+		ORDER BY q_step ASC
 	</select>
 	<insert id="adminQnaReply">
 		INSERT INTO mw_database.mw_qna 
-		VALUES(q_idx, #{m_idx}, #{q_title}, #{q_content}, ${q_group}, 1, SYSDATE())
+		VALUES(q_idx, 26, #{q_title}, #{q_content}, ${q_group}, 1, SYSDATE())
 	</insert>
 
 	<select id="search" parameterType="String" resultType="svo">

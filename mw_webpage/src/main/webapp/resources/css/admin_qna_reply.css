@@ -2,89 +2,160 @@
 
 article {
 	width: 90vw;
-	color: #444;
 	margin: 5vw auto 10vw auto;
+	color: #e8a761;
 	text-align: center;
 }
 article h2 {
 	font-family: 'GmarketSansBold';
-	font-size: 8vw;
 	color: #e8a761;
+	font-size: 9vw;
+	text-align: center;
 }
-table { 
+.qna_title input {
+	margin: 5vw auto;
+	width: 80vw;
 	font-family: 'GmarketSansLight';
-	width: 90%;
-	margin: 0 auto;
+	font-size: 4.5vw;
+	padding: 0 0 1vw 2vw;
+	border: 0.2vw solid #777;
+	border-left-width:0;
+	border-right-width:0;
+	border-top-width:0;
+	border-bottom-width:1;
+	-webkit-border-radius: 0;
+}
+.qna_title input::placeholder {
 	text-align: center;
-	border-collapse: collapse;
-	margin: 1vw auto; 
 }
-th,td {
-	border: 0.2vw solid #444;
-	padding: 2vw;
-	font-size: 4vw;
+.qna_title input:focus::-webkit-input-placeholder {
+	color: transparent;
 }
-th { 
-	font-family: 'GmarketSansMedium';
-	background-color: #e8a761;
-	color: white;
-}
-.onelistBtn {
-	
-}
-.onelistBtn input {
-	font-family: 'GmarketSansMedium';
-	border: 0.2vw solid #e8a761;
-	background-color: #e8a761;
-	color: white;
-	font-size: 5vw;
-	width: 20vw;
+.qna_context {
+	margin: 3vw auto 5vw auto;
 	text-align: center;
-	padding: 1vw 0 0 0;
-	margin: 3vw;
+}
+.qna_context textarea {
+	width: 76vw;
+	height: 65vw;
+	padding: 3vw;
+	font-family: 'GmarketSansLight';
+	font-size: 3.5vw;
+	color: #444;
+	border: 0.2vw solid #777;
+	border-radius: 1vw;
 	-webkit-appearance: none;
-	-webkit-border-radius: 1vw;
+}
+.qna_context textarea::placeholder {
+	font-family: 'GmarketSansLight';
+	text-align: center;
+	font-size: 5vw;
+}
+.qna_context textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+.qna_submit {
+	display: flex;
+	justify-content: center;
+	width: 87vw;
+	margin: 0 auto;
+}
+.qna_submit input {
+	font-family: 'GmarketSansMedium';
+	padding: 2vw 0;
+	margin: 2vw;
+	width: 39vw;
+	font-size: 6vw;
+	background: #e8a761;
+	color: white;
+	border: 0.3vw solid #e8a761;
+	border-radius: 1vw;
 	cursor: pointer;
+	transition: 0.3s;
+}
+.qna_submit input:hover {
+	background-color: white;
+	color: #e8a761;
 }
 
 /* 576px 이상 tablet */
-@media (min-width: 576px){
-	td input {
-		border: 0.2vw solid #444;
+@media (min-width: 576px) {
+	.qna_title input {
+		width: 80vw;
+		margin: 4vw 0;
+		font-size: 4vw;
+	}
+	.qna_context textarea {
+		width: 76vw;
+		height: 50vw;
+		font-size: 3vw;
+	}
+	.qna_context textarea::placeholder {
+		font-size: 4vw;
+		padding-top: 23vw;
+	}
+	.qna_submit {
+		width: 86vw;
+	}
+	.qna_submit input {
+		width: 40vw;
+		font-size: 5vw;
+		padding: 0;
+		height: 12vw;
 	}
 }
 
 /* 992px 이상 PC */
 @media (min-width: 992px) {
-	.table_title { margin-top: 32px; }
-	.table_title h2 { 
-		font-size: 70px;
-		margin: 40px 0; 
+	article {
+		width: 860px;
+		margin: 20px auto 58px auto;
 	}
-	table { 
-		width: 800px; 
-		margin-bottom: 100px;
+	article h2 { font-size: 64px; }
+	.qna_title {
+		padding: 0;
+		text-align: center;
 	}
-	th,td {
-		border: 1px solid #444;
-	}
-	th { 
-		width: 123px;
+	.qna_title input {
+		width: 750px;
+		margin: 40px auto;
 		font-size: 28px;
-		padding: 15px;
+		padding: 0 0 0 12px;
+		border: 1px solid #444;
+		border-left-width:0;
+		border-right-width:0;
+		border-top-width:0;
+		border-bottom-width:1;
 	}
-	td { 
-		padding: 15px;
-		font-size: 0;
-		height: 80px;
+	.qna_context {
+		margin: 20px auto 0 auto;
 	}
-	td p { 
+	.qna_context textarea {
+		width: 700px;
+		height: 360px;
 		font-size: 24px;
+		margin: 0 0 10px 0;
+		padding: 24px 32px;
+		border: 1px solid #444;
+		border-radius: 5px;
 	}
-	.onelistBtn input {
-		font-size: 36px;
-		width: 200px;
-		padding: 8px 0 0 0;
-		margin: 3px;
+	.qna_context textarea::placeholder {
+		font-size: 32px;
+		padding-top: 150px;
+	}
+	.qna_submit { 
+		width: 700px; 
+		justify-content: flex-end;
+		margin-right: 42px;
+	}
+	.qna_submit input {
+		font-family: 'GmarketSansLight';
+		font-size: 24px;
+		padding: 6px 0 0 0;
+		width: 80px;
+		height: 50px;
+		margin: 5px;
+		border: 2px solid #e8a761;
+		border-radius: 5px;
 	}
 }

@@ -11,15 +11,18 @@
 <!-- favicon -->
 <link rel="shortcut icon" href="/resources/images/mw_favicon.ico" type="image/x-icon">
 <link rel="icon" href="/resources/images/mw_favicon.ico" type="image/x-icon">
-<!-- CSS -->
+<!-- css -->
 <link rel="stylesheet" type="text/css" href="/resources/css/admin_qna_onelist.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
-	function qna_reply(f) { 
-		f.action = "admin_qna_reply.do?cPage=${cPage}";
+	function qna_reply(f) {
+		f.action = "admin_qna_reply.do";
 		f.submit();
 	}
-	function admin_qna() { location.href = "admin_qna.do?cPage=${cPage}"; }
+	function back_go() {
+		history.go(-1);
+	}
 </script>
 </head>
 
@@ -30,9 +33,8 @@
 	<article>
 		<h2>문의 내용</h2>
 		<c:choose>
-		<!-- 답변 O -->
-			<c:when test="${fn:length(q_list) > 0}">
-				<c:forEach var="k" items="q_list">
+			<c:when test="${fn:length(q_list) > 1}">
+				<c:forEach var="k" items="${q_list}">
 					<table>
 						<tbody>
 							<tr>
@@ -40,28 +42,25 @@
 								<td>${k.q_title}</td>
 							</tr>
 							<tr>
-								<th>작성자</th>
-								<td>${m_nickname}</td>
-							</tr>
-							<tr>
 								<th>작성일</th>
 								<td>${k.q_regdate}</td>
 							</tr>
 							<tr>
-								<th>내용</th>
-								<td><textarea>${k.q_content}</textarea></td>
+								<th colspan="2">내용</th>
+							</tr>
+							<tr>
+								<td colspan="2"><pre>${k.q_content}</pre></td>
 							</tr>
 						</tbody>
 					</table>
 				</c:forEach>
 				<div class="onelistBtn">
-					<input type="button" value="목록으로" onclick="admin_qna()">
+					<input type="button" value="목록" onclick="back_go()">
 				</div>
 			</c:when>
-		<!-- 답변 X -->
 			<c:otherwise>
 				<form>
-					<c:forEach var="k" items="q_list">
+					<c:forEach var="k" items="${q_list}">
 						<table>
 							<tbody>
 								<tr>
@@ -69,25 +68,24 @@
 									<td>${k.q_title}</td>
 								</tr>
 								<tr>
-									<th>작성자</th>
-									<td>${m_nickname}</td>
-								</tr>
-								<tr>
 									<th>작성일</th>
 									<td>${k.q_regdate}</td>
 								</tr>
 								<tr>
-									<th>내용</th>
-									<td><textarea>${k.q_content}</textarea></td>
+									<th colspan="2">내용</th>
+								</tr>
+								<tr>
+									<td colspan="2"><pre>${k.q_content}</pre></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="onelistBtn">
-							<input type="hidden" name="m_idx" value="${k.m_idx}">
-							<input type="hidden" name="q_title" value="${k.q_title}">
-							<input type="hidden" name="q_group" value="${k.q_group}">
-							<input type="button" value="답변하기" onclick="qna_reply(this.form)">
-							<input type="button" value="목록으로" onclick="admin_qna()">
+							<input type="hidden" name="m_idx" value="${k.m_idx}"> 
+							<input type="hidden" name="q_title" value="${k.q_title}"> 
+							<input type="hidden" name="q_group" value="${k.q_group}"> 
+							<input type="hidden" name="cPage" value="${cPage}"> 
+							<input type="button" value="답변" onclick="qna_reply(this.form)">
+							<input type="button" value="목록" onclick="back_go()">
 						</div>
 					</c:forEach>
 				</form>

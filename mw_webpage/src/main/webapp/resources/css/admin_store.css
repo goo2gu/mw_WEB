@@ -82,7 +82,7 @@ td a:hover { color: #e8a761; }
 	}
 	.btn {
 		width: 870px;
-		margin: 32px auto 0 auto;
+		margin: 12px auto 0 auto;
 	}
 	.btn div {
 		font-size: 24px;
@@ -92,12 +92,12 @@ td a:hover { color: #e8a761; }
 		margin: 10px auto 20px auto;
 	}
 	th,td {
-		border: 0.1px solid #444;
+		border: 1px solid #444;
 		padding: 10px;
 		font-size: 24px;
 	}
 	th:first-child { width: 100px; }
-	th:last-child { width: 200px; }
+	th:last-child { width: 100px; }
 	.paging { margin-top: 15px; }
 	
 }

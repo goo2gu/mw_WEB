@@ -15,6 +15,16 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
 <!-- js -->
 <script type="text/javascript">
+	/* onload = function() {
+	    var pwd = "mjworld2020";
+	    var getpwd = prompt("비밀번호를 입력하세요.");
+	    if(pwd == getpwd) {
+	        return;
+	    } else {
+	        alert("비밀번호가 일치하지 않습니다.");
+	        location.href = "main.do";
+	    }
+	} */
 	function admin_store() { location.href = "admin_store.do"; }
 	function admin_qna() { location.href = "admin_qna.do"; }
 </script>

@@ -14,6 +14,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/admin_store_add.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function send_go(f) {
 		// 유효성 검사
@@ -63,8 +64,10 @@
 </head>
 
 <body>
-	<div><jsp:include page="top.jsp" /></div>
-	<div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
+	<article>
 		<form method="post" encType="multipart/form-data">
 			<div class="table_title">
 				<h2>게시판 글쓰기</h2>
@@ -152,6 +155,6 @@
 				</tbody>
 			</table>
 		</form>
-	</div>
+	</article>
 </body>
 </html>

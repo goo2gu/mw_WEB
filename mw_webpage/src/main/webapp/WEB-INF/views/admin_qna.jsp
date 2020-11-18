@@ -14,6 +14,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/admin_qna.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function storeAdd() {
 		location.href = "adminStoreAdd.do";
@@ -71,7 +72,7 @@
 						<b>${k}</b>
 					</c:when>
 					<c:otherwise>
-						<a href="dmin_qna.do?cPage=${k}">${k}</a>
+						<a href="admin_qna.do?cPage=${k}">${k}</a>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
@@ -80,7 +81,7 @@
 				<c:when test="${paging.endBlock >= paging.totalPage}">
 				</c:when>
 				<c:otherwise>
-					<a href="dmin_qna.do?cPage=${paging.beginBlock + paging.pagePerBlock}">▶</a>
+					<a href="admin_qna.do?cPage=${paging.beginBlock + paging.pagePerBlock}">▶</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
