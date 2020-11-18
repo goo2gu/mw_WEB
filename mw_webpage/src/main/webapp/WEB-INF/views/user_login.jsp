@@ -31,8 +31,8 @@
 			<p>소셜 로그인을 통해 간편하게 이용해보세요.</p>
 			<div class="socialLink">
 				<img src="/resources/images/kakao_btn.png" onclick="kakaoLogin()">
-				<img src="/resources/images/kakao_btn.png" onclick="kakaoLogin()">
-				<img src="/resources/images/kakao_btn.png" onclick="kakaoLogin()">
+				<!-- <img src="/resources/images/kakao_btn.png" onclick="kakaoLogin()">
+				<img src="/resources/images/kakao_btn.png" onclick="kakaoLogin()"> -->
 			</div>
 			<div class="addLink">
 				<a href="https://kauth.kakao.com/oauth/authorize?client_id=eee202b1a78a56d2e53bd82554d2abcd&redirect_uri=http://localhost:8090/kakaoAdd.do&response_type=code&state=mjworld2020">
