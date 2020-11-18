@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -47,7 +48,7 @@
 							<tr>
 								<td>${paging.totalRecord-((paging.nowPage-1)*paging.numPerPage+vs.index)}</td>
 								<td><a href="admin_qna_onelist.do?q_idx=${k.q_idx}&m_idx=${k.m_idx}&cPage=${paging.nowPage}">${k.q_title}</a></td>
-								<td>${k.q_regdate}</td>
+								<td>${fn:substring(k.q_regdate,0,10)}</td>
 							</tr>
 						</c:forEach>
 					</c:otherwise>

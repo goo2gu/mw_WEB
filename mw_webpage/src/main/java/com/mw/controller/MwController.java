@@ -2,6 +2,8 @@ package com.mw.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -226,14 +228,18 @@ public class MwController {
 		ModelAndView mv = new ModelAndView("redirect:qna.do");
 		try {
 			// q_group 값 생성
-			String q_group = qvo.getM_idx() + qvo.getQ_title().substring(0, 7) + qvo.getQ_content().substring(0, 7);
-			qvo.setQ_group(q_group);
+			String m_idx = qvo.getM_idx();
+			Calendar cal = Calendar.getInstance();
+			SimpleDateFormat date = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+			String now = date.format(cal.getTime());
+			String q_group = m_idx + "_" + now;
 			System.out.println("q_group : " + q_group);
+			qvo.setQ_group(q_group);
 			// DB 저장
 			dao.getQnaWrite(qvo);
 			System.out.println("문의 작성 완료.");
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("error occured at qna_writeOk : "+e);
 		}
 		return mv;
 	}
@@ -242,9 +248,9 @@ public class MwController {
 	@RequestMapping("qna_onelist.do")
 	public ModelAndView qnaOnelistCommand(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("qna_onelist");
-		String q_idx = request.getParameter("q_idx");
+		String q_group = request.getParameter("q_group");
 		try {
-			QVO qvo = dao.getQnaOnelist(q_idx);
+			List<QVO> qvo = dao.getQnaOnelist(q_group);
 			if (qvo != null) {
 				mv.addObject("qvo", qvo);
 			}
@@ -501,13 +507,10 @@ public class MwController {
 			// 시작 번호 (begin), 끝 번호 (end)
 			paging.setBegin((paging.getNowPage()-1) * paging.getNumPerPage()+1);
 			paging.setEnd((paging.getBegin()-1) + paging.getNumPerPage());
-			
-			// 문의 리스트 불러오기
-			List<QVO> list = dao.getQnaList();
-			
+			// 문의 리스트
+			List<QVO> list = dao.getQnaList(paging.getBegin(), paging.getEnd());
 			// 시작 블록 (beginBlock), 끝 블록 (endBlock)
-			paging.setBeginBlock(
-					(int)((paging.getNowPage()-1) / paging.getPagePerBlock()) * paging.getPagePerBlock() + 1);
+			paging.setBeginBlock((int)((paging.getNowPage()-1) / paging.getPagePerBlock()) * paging.getPagePerBlock() + 1);
 			paging.setEndBlock(paging.getBeginBlock() + paging.getPagePerBlock()-1);
 			// 블록 처리 >> endBlock 이 totalPage 보다 큰 경우,
 			if (paging.getEndBlock() > paging.getTotalPage()) {

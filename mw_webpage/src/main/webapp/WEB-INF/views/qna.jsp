@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     
 <!DOCTYPE html>
 <html>
@@ -15,13 +16,6 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/qna.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
 <!-- js -->
-<script type="text/javascript">
-	function qna_write() { location.href = "qna_write.do"; }
-	function qna_onelist() {
-		f.action = "qna_onelist.do";
-		f.submit;
-	}
-</script>
 </head>
 
 <body>
@@ -29,9 +23,9 @@
 		<jsp:include page="top.jsp" />
 	</header>
 	<article>
-		<div class="qna_title">
-			<h2>문의 리스트</h2>
-			<input type="button" value="문의하기" onclick="qna_write()">
+		<h2>문의 리스트</h2>
+		<div class="btn">
+			<input type="button" value="문의하기" onclick="location.href = 'qna_write.do'">
 		</div>
 		<c:choose>
 			<c:when test="${empty q_list}">
@@ -41,15 +35,12 @@
 			</c:when>
 			<c:otherwise>
 				<c:forEach var="k" items="${q_list}">
-					<form>
-						<div class="qna_list" onclick="qna_onelist(this.form)">
-							<div class="qna_one">
-								<h4>${k.q_title}</h4>
-								<p>${k.q_regdate}</p>
-								<input type="hidden" name="q_idx" value="${k.q_idx}">
-							</div>
+					<div class="qna_list">
+						<div class="qna_one" onclick="location.href='qna_onelist.do?q_group=${k.q_group}'">
+							<h4>${fn:substring(k.q_title,0,12)}</h4>
+							<p>${fn:substring(k.q_regdate,0,10)}</p>
 						</div>
-					</form>
+					</div>
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>

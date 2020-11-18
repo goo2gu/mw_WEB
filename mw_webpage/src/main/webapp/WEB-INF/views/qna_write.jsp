@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -48,17 +47,17 @@
 	<article>
 		<h2>문의 남기기</h2>
 			<form>
-			<div class="qna_title">
-				<input type="text" name="q_title" placeholder="제목을 입력하세요.">
-			</div>
-			<div class="qna_context">
-				<textarea name="q_content" placeholder="내용을 입력하세요."></textarea>
-			</div>
-			<div class="qna_submit">
-				<input type="hidden" name="m_idx" value="${m_idx}">
-				<input type="button" value="제출" onclick="qna_writeOk(this.form)">
-				<input type="button" value="취소" onclick="list_go()">
-			</div>
+				<div class="qna_title">
+					<input type="text" name="q_title" placeholder="제목을 입력하세요.">
+				</div>
+				<div class="qna_context">
+					<textarea name="q_content" placeholder="내용을 입력하세요."></textarea>
+				</div>
+				<div class="qna_submit">
+					<input type="hidden" name="m_idx" value="${m_idx}">
+					<input type="button" value="제출" onclick="qna_writeOk(this.form)">
+					<input type="button" value="취소" onclick="list_go()">
+				</div>
 			</form>
 	</article>
 </body>

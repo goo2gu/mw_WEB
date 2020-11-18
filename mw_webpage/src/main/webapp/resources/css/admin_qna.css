@@ -15,6 +15,9 @@ article h2 {
 	font-family: 'GmarketSansLight';
 	color: #777;
 	font-size: 4vw;
+	margin-left: 5vw;
+	display: flex;
+	justify-content: flex-start;
 	transition: 0.3s;
 	cursor: pointer;
 }
@@ -23,7 +26,7 @@ article h2 {
 }
 table { 
 	font-family: 'GmarketSansLight';
-	width: 90%;
+	width: 90vw;
 	margin: 0 auto;
 	text-align: center;
 	border-collapse: collapse;
@@ -33,13 +36,14 @@ th,td {
 	border: 0.2vw solid #444;
 	padding: 2vw;
 	font-size: 4vw;
+	color: #444;
 }
 th { 
 	background-color: #e8a761;
 	color: white;
 }
 th:first-child {
-	width: 16vw;
+	width: 10vw;
 }
 th:last-child {
 	width: 21vw;
@@ -67,24 +71,22 @@ td a:hover { color: #e8a761; }
 		font-size: 64px;
 		margin: 0;
 	}
-	.mainBtn { font-size: 20px; }
+	.mainBtn { 
+		font-size: 24px;
+		margin-left: 10px;
+		margin-top: 36px;
+	}
 	table { 
-		width: 800px;
-		margin: 30px auto 200px auto; 
+		width: 880px;
+		margin: 10px auto 20px auto;
 	}
 	th,td {
 		border: 0.1px solid #444;
-		padding: 5px;
-		font-size: 16px;
+		padding: 10px;
+		font-size: 24px;
 	}
-	th:first-child {
-		width: 200px;
-	}
-	th:last-child {
-		width: 240px;
-	}
-	.paging {
-		margin-top: 20px;
-	}
+	th:first-child { width: 100px; }
+	th:last-child { width: 200px; }
+	.paging { margin-top: 15px; }
 	
 }

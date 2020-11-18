@@ -40,13 +40,12 @@ public class DAO {
 		res = sqlSessionTemplate.selectOne("totalCount");		
 		return res;
 	}
-	// 관리자 페이지 - 게시물 리스트
+	// 관리자 페이지 - 가게 리스트
 	public List<SVO> getList(int begin, int end) throws Exception {
 		List<SVO> list = null;
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("begin", begin);
 		map.put("end", end);
-		
 		list = sqlSessionTemplate.selectList("adminStoreList", map);		
 		return list;
 	}
@@ -73,9 +72,12 @@ public class DAO {
 		sqlSessionTemplate.delete("adminStoreDelete", s_idx);
 	}
 	// 관리자 페이지 - 문의 관리
-	public List<QVO> getQnaList() throws Exception {
+	public List<QVO> getQnaList(int begin, int end) throws Exception {
 		List<QVO> list = null;
-		list = sqlSessionTemplate.selectList("adminQna");
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("begin", begin);
+		map.put("end", end);
+		list = sqlSessionTemplate.selectList("adminQnaList", map);		
 		return list;
 	}
 	// 관리자 페이지 - 작성자 정보 추출
@@ -166,9 +168,9 @@ public class DAO {
 		sqlSessionTemplate.insert("qnaWrite", qvo);
 	}
 	// 문의 상세
-	public QVO getQnaOnelist(String q_idx) throws Exception {
-		QVO qvo = null;
-		qvo = sqlSessionTemplate.selectOne("qnaOnelist", q_idx);
-		return qvo;
+	public List<QVO> getQnaOnelist(String q_group) throws Exception {
+		List<QVO> q_onelist = null;
+		q_onelist = sqlSessionTemplate.selectList("qnaOnelist", q_group);
+		return q_onelist;
 	}
 }

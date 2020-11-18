@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -27,19 +28,28 @@
 	</header>
 	<article>
 		<h2>문의 내용</h2>
-		<c:forEach var="k" items="${q_onelist}">
+		<c:forEach var="k" items="${qvo}">
 			<table>
 				<tbody>
 					<tr>
 						<th>제목</th>
-						<td>${q_title}</td>
+						<td>${k.q_title}</td>
 					</tr>
 					<tr>
-						<th>내용</th>
-						<td>${q_content}</td>
+						<th>작성일</th>
+						<td>${fn:substring(k.q_regdate,0,16)}</td>
+					</tr>
+					<tr>
+						<th colspan="2">내용</th>
+					</tr>
+					<tr>
+						<td class="context" colspan="2">${k.q_content}</td>
 					</tr>
 				</tbody>
 			</table>
+			<div class="btn">
+				<input type="button" value="목록" onclick="list_go()">
+			</div>
 		</c:forEach>
 	</article>
 </body>

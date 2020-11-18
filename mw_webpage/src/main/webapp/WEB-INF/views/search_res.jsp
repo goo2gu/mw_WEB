@@ -16,6 +16,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/search_res.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 	function searchBtn(f) {

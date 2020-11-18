@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+article {
+	width: 90vw;
+	margin: 5vw auto 10vw auto;
+	color: #e8a761;
+}
+article h2 {
+	font-family: 'GmarketSansBold';
+	color: #e8a761;
+	font-size: 9vw;
+	text-align: center;
+}
+table { 
+	font-family: 'GmarketSansLight';
+	width: 90vw;
+	margin: 5vw auto 0 auto;
+	border-collapse: collapse;
+}
+th,td {
+	border: 0.2vw solid #444;
+	padding: 1.5vw;
+	font-size: 4vw;
+	color: #444;
+}
+th { 
+	background-color: #e8a761;
+	color: white;
+	text-align: center;
+	width: 15vw;
+}
+td { padding: 2vw 3vw; }
+.btn { text-align: right; }
+.btn input {
+	font-family: 'GmarketSansMedium';
+	border: 0.2vw solid #e8a761;
+	border-radius: 1vw;
+	background-color: #e8a761;
+	color: white;
+	font-size: 3vw;
+	padding: 2vw;
+	margin: 5vw auto;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.btn input:hover {
+	background-color: white;
+	color: #e8a761;
+}
+
+/* 576px 이상 tablet */
+@media (min-width: 576px) {
+	
+}
+
+/* 992px 이상 PC */
+@media (min-width: 992px) {
+	article {
+		width: 860px;
+		margin: 20px auto 58px auto;
+	}
+	article h2 { font-size: 64px; }
+	table { 
+		width: 860px;
+		margin: 24px auto; 
+	}
+	th,td {
+		border: 1px solid #444;
+		padding: 12px;
+		font-size: 24px;
+	}
+	th { width: 100px; }
+	td { padding-left: 24px; }
+	.context {
+		padding: 24px 20px;
+	}
+	.btn input {
+		border: 1px solid #e8a761;
+		border-radius: 5px;
+		padding: 10px 20px;
+		margin: 15px auto;
+		font-size: 20px;
+	}
+}

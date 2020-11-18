@@ -1,31 +1,33 @@
 @charset "UTF-8";
 
 article {
-	width: 85vw;
-	margin: 0 auto;
+	width: 90vw;
+	margin: 5vw auto 10vw auto;
+	color: #e8a761;
 }
-.qna_title {
-	margin: 5vw 0 10vw 0;
-	text-align: center;
-}
-.qna_title h2 {
+article h2 {
 	font-family: 'GmarketSansBold';
 	color: #e8a761;
 	font-size: 9vw;
 	text-align: center;
 }
-.qna_title input {
-	font-family: 'GmarketSansBold';
+.btn { text-align: right; }
+.btn input {
+	font-family: 'GmarketSansMedium';
+	border: 0.2vw solid #e8a761;
+	border-radius: 1vw;
 	background-color: #e8a761;
 	color: white;
-	border: thin;
-	transition: 0.3s;
 	font-size: 5vw;
-	margin-top: 6vw;
+	width: 90vw;
 	padding: 2vw;
-	width: 100%;
+	margin: 5vw auto;
+	transition: 0.3s;
 	cursor: pointer;
-	-webkit-appearance: button;
+}
+.btn input:hover {
+	background-color: white;
+	color: #e8a761;
 }
 .no_qna {
 	border: 0.2vw solid #777;
@@ -60,7 +62,7 @@ article {
 .qna_one p {
 	font-family: 'GmarketSansLight';
 	color: #444;
-	font-size: 2vw;
+	font-size: 3vw;
 	margin: auto 0;
 }
 .footer {
@@ -82,71 +84,38 @@ article {
 @media (min-width: 992px) {
 	article {
 		width: 860px;
-		margin: 0 auto;
+		margin: 20px auto 58px auto;
 	}
-	.qna_title {
-		padding: 0;
-		margin: 20px 0 58px 0;
-		text-align: center;
-	}
-	.qna_title input {
-		font-size: 38px;
-		border: 1.5px solid #e8a761;
-		border-radius: 10px;
-		width: 863px;
-		padding: 18px;
-		margin: 20px 0 0 0;
-	}
-	.qna_title input:hover {
-		border: 1.5px solid #e8a761;
-		background-color: white;
-		color: #e8a761;
-	}
-	.qna_title h2 {
-		font-size: 64px;
+	article h2 { font-size: 64px; }
+	.btn input {
+		border: 2px solid #e8a761;
+		border-radius: 5px;
+		width: 860px;
+		padding: 16px;
+		margin: 24px auto;
+		font-size: 28px;
 	}
 	.no_qna {
-		border: 1px solid #777;
+		border: 2px solid #777;
 		border-radius: 7px;
 		font-size: 32px;
 		padding: 200px 50px;
 	}
 	.qna_list {
-		margin: 50px 0;
+		margin: 10px 0 50px 0;
 		border: 1px solid #444;
 		border-radius: 10px;
 		width: 100%;
 	}
 	.qna_list:hover {
-		box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
 		background-color: #e8a761;
 		border-color: #e8a761;
 	}
 	.qna_one {
 		margin: 30px 10px;
-		padding: 0 50px;
+		padding: 0 30px;
 	}
 	.qna_one h4 { font-size: 28px; }
 	.qna_one p { font-size: 16px; }
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

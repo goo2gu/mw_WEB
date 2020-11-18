@@ -31,7 +31,7 @@
 		<h2>문의 내용</h2>
 		<c:choose>
 		<!-- 답변 O -->
-			<c:when test="${fn:length(q_list) > 1}">
+			<c:when test="${fn:length(q_list) > 0}">
 				<c:forEach var="k" items="q_list">
 					<table>
 						<tbody>

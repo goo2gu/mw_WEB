@@ -82,22 +82,24 @@ article h2 {
 /* 576px 이상 tablet */
 @media (min-width: 576px) {
 	.qna_title input {
-		width: 80%;
+		width: 80vw;
 		margin: 4vw 0;
-		font-size: 5vw;
-	}
-	.qna_context { margin: 1vw 5vw 3vw 5vw; }
-	.qna_context textarea {
-		width: 82%;
-		height: 50vw;
 		font-size: 4vw;
+	}
+	.qna_context textarea {
+		width: 76vw;
+		height: 50vw;
+		font-size: 3vw;
 	}
 	.qna_context textarea::placeholder {
 		font-size: 4vw;
 		padding-top: 23vw;
 	}
+	.qna_submit {
+		width: 86vw;
+	}
 	.qna_submit input {
-		width: 35vw;
+		width: 40vw;
 		font-size: 5vw;
 		padding: 0;
 		height: 12vw;
@@ -106,20 +108,19 @@ article h2 {
 
 /* 992px 이상 PC */
 @media (min-width: 992px) {
-	.article {
-		width: 890px;
-		margin: 0 auto;
+	article {
+		width: 860px;
+		margin: 20px auto 58px auto;
 	}
+	article h2 { font-size: 64px; }
 	.qna_title {
 		padding: 0;
-		margin: 20px 0 0 0;
 		text-align: center;
 	}
-	.qna_title h2 { font-size: 64px; }
 	.qna_title input {
-		width: 80%;
+		width: 750px;
 		margin: 40px auto;
-		font-size: 32px;
+		font-size: 28px;
 		padding: 0 0 0 12px;
 		border: 1px solid #444;
 		border-left-width:0;
@@ -131,22 +132,26 @@ article h2 {
 		margin: 20px auto 0 auto;
 	}
 	.qna_context textarea {
-		width: 70%;
-		height: 240px;
-		font-size: 28px;
-		margin: 20px 0 20px 0;
+		width: 700px;
+		height: 360px;
+		font-size: 24px;
+		margin: 0 0 20px 0;
+		padding: 24px 32px;
 		border: 1px solid #444;
+		border-radius: 5px;
 	}
 	.qna_context textarea::placeholder {
 		font-size: 32px;
 		padding-top: 90px;
 	}
+	.qna_submit { width: 820px; }
 	.qna_submit input {
-		font-size: 36px;
-		padding: 10px 10px 7px 10px;
+		font-size: 40px;
+		padding: 12px 10px 7px 10px;
 		height: 92px;
-		width: 331px;
-		margin: 28px;
-		border: 1px solid #444;
+		width: 365px;
+		margin: 20px;
+		border: 2px solid #e8a761;
+		border-radius: 5px;
 	}
 }
