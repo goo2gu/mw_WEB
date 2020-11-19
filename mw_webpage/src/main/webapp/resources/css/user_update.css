@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+article h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
+	color: #e8a761;
+	text-align: center;
+	margin: 5vw auto 0 auto;
+}
+
+.updateInfo {
+	text-align: center;
+	border: 0.3vw solid #777;
+	border-radius: 1vw;
+	width: 80vw;
+	padding: 3vw;
+	margin: 5vw auto;
+}
+
+.updateInfo img {
+	width: 50vw;
+	height: 50vw;
+	border: 0.2vw solid #777;
+	border-radius: 50vw;
+	margin: 5vw 0 3vw 0;
+	object-fit: cover;
+	image-orientation: from-image;
+}
+
+.updateInfoTexts {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	height: 21vw;
+}
+.updateInfoTexts label {
+	padding: 1.5vw 4vw;
+	font-family: 'GmarketSansLight';
+	color: white;
+	width: 13vw;
+	margin: 0 auto;
+	background-color: #e8a761;
+	cursor: pointer;
+	border: 0.2vw solid #e8a761;
+	border-radius: 1vw;
+	transition: 0.3s;
+}
+.updateInfoTexts label:hover {
+	background-color: white;
+	color: #e8a761;
+}
+.updateInfoTexts label:active {
+	background-color: #e8a761;
+	color: #e8a761;
+}
+.updateInfoTexts input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+.nameInput {
+	font-size: 4vw;
+	font-family: 'GmarketSansLight';
+	text-align: center;
+	width: 30vw;
+	margin: 0 auto;
+}
+.updateInfoTexts p {
+	font-family: 'GmarketSansLight';
+	font-size: 3vw;
+	color: #aaa;
+}
+
+.updateBtn { text-align: center; }
+.updateBtn input {
+	font-family: 'GmarketSansLight';
+	font-size: 4vw;
+	color: white;
+	border: 0.2vw solid #e8a761;
+	border-radius: 1vw;
+	background-color: #e8a761;
+	padding: 1.5vw;
+	margin: 1vw;
+	width: 16vw;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.updateBtn input:hover {
+	background-color: white;
+	color: #e8a761;
+}
+
+/* 576px 이상 tablet */
+@media ( min-width : 576px) {
+	article h2 { font-size: 7vw; }
+	.updateInfo { border: 0.2vw solid #777; }
+	.updateInfo img {
+		width: 40vw;
+		height: 40vw;
+		margin: 3vw auto;
+	}
+	.updateInfoTexts p { font-size: 2.5vw; }
+}
+
+/* 992px 이상 PC */
+@media ( min-width : 992px) {
+	article h2 {
+		font-size: 64px;
+		margin: 24px auto 0 auto;
+	}
+	.updateInfo {
+		border: 1px solid #777;
+		border-radius: 5px;
+		width: 700px;
+		padding: 10px 0 35px 0;
+		margin: 30px auto;
+		display: flex;
+		flex-flow: column;
+	}
+	.updateInfo img {
+		width: 200px;
+		height: 200px;
+		border: 1px solid #777;
+		border-radius: 200px;
+		margin: 30px auto 10px auto;
+	}
+	.updateInfoTexts { height: 150px; }
+	.updateInfoTexts label {
+		width: 50px;
+		padding: 10px 15px;
+		border: 1px solid #e8a761;
+		border-radius: 5px;
+	}
+	.nameInput {
+		font-size: 28px;
+		width: 200px;
+	}
+	.updateInfoTexts p { font-size: 18px; }
+	.updateBtn input {
+		font-size: 28px;
+		border: 1px solid #e8a761;
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		width: 100px;
+	}
+}

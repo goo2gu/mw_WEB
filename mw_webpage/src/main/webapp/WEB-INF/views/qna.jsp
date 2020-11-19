@@ -15,7 +15,6 @@
 <!-- css -->
 <link rel="stylesheet" type="text/css" href="/resources/css/qna.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
-<!-- js -->
 </head>
 
 <body>

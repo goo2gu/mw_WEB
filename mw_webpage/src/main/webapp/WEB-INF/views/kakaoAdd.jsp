@@ -22,17 +22,15 @@
 				var m_email = "";
 				var m_nickname = "";
 				var m_profile_img = "";
-				var m_thumbnail_img = "";
 				$.each(data, function(k, v) {
 					var response = v['profile'];
 					$.each(response, function(k, v) {
 						m_nickname = response['nickname'];
 						m_profile_img = response['profile_image_url'];
-						m_thumbnail_img = response['thumbnail_image_url'];
 					});
 					m_email = v['email'];
 				});
-				location.href = "kakaoAdd_write.do?m_sns=카카오&m_id=${m_id}&m_email="+m_email+"&m_nickname="+m_nickname+"&m_profile_img="+m_profile_img+"&m_thumbnail_img="+m_thumbnail_img;
+				location.href = "kakaoAdd_write.do?m_sns=카카오&m_id=${m_id}&m_email="+m_email+"&m_nickname="+m_nickname+"&m_profile_img="+m_profile_img;
 			},
 			error : function() {
 				alert("카카오 회원 정보를 불러오는 데 실패했습니다. 관리자에게 문의해주세요.");

@@ -26,8 +26,9 @@
 </head>
 
 <body>
-
-	<div id="top"> <jsp:include page="top.jsp" /> </div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
 	<div class="biggerCategory">
 		<div onclick="eat_go()">먹을거리</div>
 		<div onclick="drink_go()">마실거리</div>

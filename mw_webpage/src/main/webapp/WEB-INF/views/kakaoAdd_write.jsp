@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/kakaoAdd_write.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
 <!-- js -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	// 파라미터 값 불러오기
 	function getParameterByName(name) {
@@ -27,7 +27,6 @@
 	alert("m_id : " + m_id);
 	var m_email = getParameterByName('m_email');
 	var m_profile_img = getParameterByName('m_profile_img');
-	var m_thumbnail_img = getParameterByName('m_thumbnail_img');
 	
 	// 성별 중복 체크 방지
 	function genderCheckOnly(chk) {
@@ -58,7 +57,7 @@
 		} else {
 			var submit = confirm("이대로 제출하시겠습니까?");
 			if (submit == true) {
-				f.action="kakaoAdd_ok.do?m_sns="+m_sns+"&m_id="+m_id+"&m_email="+m_email+"&m_profile_img="+m_profile_img+"&m_thumbnail_img="+m_thumbnail_img;
+				f.action="kakaoAdd_ok.do?m_sns="+m_sns+"&m_id="+m_id+"&m_email="+m_email+"&m_profile_img="+m_profile_img;
 				f.submit();
 			}
 		}

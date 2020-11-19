@@ -14,8 +14,8 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/search_main.css">
+<!-- js -->
 <script type="text/javascript">
-
 	// 진입 시 검색창에 포커스 고정
 	$(document).ready(function(){ $("#searchBar").focus(); });
 	

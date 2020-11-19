@@ -14,6 +14,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/admin_store_onelist.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function update_go() {
 		location.href = "admin_store_update.do?cPage=${cPage}";
@@ -28,8 +29,10 @@
 </head>
 
 <body>
-	<div><jsp:include page="top.jsp" /></div>
-	<div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
+	<article>
 		<div class="table_title">
 			<h2>가게 상세 정보</h2>
 		</div>
@@ -95,6 +98,6 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
+	</article>
 </body>
 </html>

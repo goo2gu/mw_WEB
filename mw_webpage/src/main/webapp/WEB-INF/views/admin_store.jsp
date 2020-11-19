@@ -13,6 +13,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/admin_store.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function admin_go() { location.href = "admin.do"; }
 	function storeAdd() { location.href = "adminStoreAdd.do"; }

@@ -12,16 +12,13 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/mw_info.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- js -->
+<script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
 <script>
 	$(document).ready(function() {
-	    $('.mw_info_title').animate({
+	    $('.mw_info_context').animate({
 	    	opacity: '1'
-	    }, 1200, function() {
-	    	$('.mw_info_context').animate({
-		    	opacity: '1'
-		    }, 1200);
-		});
+	    }, 1200);
 	});
 	function fbook_go() {
 		var f_url = "https://www.facebook.com/myongjiworld/";
@@ -35,13 +32,11 @@
 </head>
 
 <body>
-	<div><jsp:include page="top.jsp" /></div>
-
-	<div class="wrap_all">
-		<div class="mw_info_title">
-			<h2>#함께해요</h2>
-			<h2>#명지월드</h2>
-		</div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
+	<article>
+		<h2>명월 소개</h2>
 		<div class="mw_info_context">
 			<div class="texts">
 				<p><span class="txt_hlt">'명월-명지월드의 모든 것'</span>은<br>거북골로에 자리잡은 상권과의<br><span class="txt_hlt">상생</span>을 위해 활동하고 있는<br>청년 단체입니다.</p>
@@ -58,7 +53,6 @@
 			</div>
 			<p>myongjiworld@gmail.com</p>
 		</div>
-	</div>
-
+	</article>
 </body>
 </html>

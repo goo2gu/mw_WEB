@@ -14,6 +14,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/admin_store_delete.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function delete_go(f) {
 		// 비밀번호 검사
@@ -37,8 +38,10 @@
 </head>
 
 <body>
-	<div><jsp:include page="top.jsp" /></div>
-	<div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
+	<article>
 		<div class="table_title">
 			<h2>가게 삭제</h2>
 		</div>
@@ -64,6 +67,6 @@
 				</tbody>
 			</table>
 		</form>
-	</div>
+	</article>
 </body>
 </html>

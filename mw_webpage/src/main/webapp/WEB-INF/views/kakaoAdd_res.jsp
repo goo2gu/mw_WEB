@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
 </head>
 <!-- js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 	    $('.addInfo').animate({
@@ -26,9 +26,7 @@
 		    }, 1200);
 		});
 	});
-	function main_go() {
-		location.href = "main.do";
-	}
+	function main_go() { location.href = "main.do"; }
 </script>
 <body>
 	<header>

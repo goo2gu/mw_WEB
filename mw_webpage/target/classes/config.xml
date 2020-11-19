@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 별칭 사용 -->
+	<typeAliases>
+		<typeAlias type="com.mw.db.SVO" alias="svo" />
+		<typeAlias type="com.mw.db.MVO" alias="mvo" />
+		<typeAlias type="com.mw.db.QVO" alias="qvo" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappings/mapper.xml" />
+	</mappers>
+</configuration>

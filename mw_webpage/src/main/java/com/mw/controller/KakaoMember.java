@@ -46,7 +46,6 @@ public class KakaoMember {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
 		System.out.println("responseBody : " + responseBody);
 		return responseBody;
 	}

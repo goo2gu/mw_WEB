@@ -193,7 +193,7 @@ public class KakaoCallBack {
 		return mv;
 	}
 	
-	// 카카오 아이디로 페이지 이용하기
+	// 카카오 아이디 회원가입
 	@RequestMapping("kakaoAdd_ok.do")
 	public ModelAndView kakaoAddOkCommand(HttpServletRequest request, MVO k_mvo) {
 		ModelAndView mv = null;

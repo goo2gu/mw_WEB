@@ -41,25 +41,25 @@ function list_go() { location.href = "qna.do"; }
 </head>
 
 <body>
-<header>
-	<jsp:include page="top.jsp" />
-</header>
-<article>
-	<h2>답변하기</h2>
-		<form>
-			<div class="qna_title">
-				<input type="text" name="q_title" value="[re] ${q_title}">
-			</div>
-			<div class="qna_context">
-				<textarea name="q_content" placeholder="내용을 입력하세요." ></textarea>
-			</div>
-			<div class="qna_submit">
-				<input type="hidden" name="q_group" value="${q_group}">
-				<input type="hidden" name="cPage" value="${cPage}"> 
-				<input type="button" value="제출" onclick="qna_replyOk(this.form)">
-				<input type="button" value="취소" onclick="list_go()">
-			</div>
-		</form>
-</article>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
+	<article>
+		<h2>답변하기</h2>
+			<form>
+				<div class="qna_title">
+					<input type="text" name="q_title" value="[re] ${q_title}">
+				</div>
+				<div class="qna_context">
+					<textarea name="q_content" placeholder="내용을 입력하세요." ></textarea>
+				</div>
+				<div class="qna_submit">
+					<input type="hidden" name="q_group" value="${q_group}">
+					<input type="hidden" name="cPage" value="${cPage}"> 
+					<input type="button" value="제출" onclick="qna_replyOk(this.form)">
+					<input type="button" value="취소" onclick="list_go()">
+				</div>
+			</form>
+	</article>
 </body>
 </html>

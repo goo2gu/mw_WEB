@@ -2,12 +2,12 @@ package com.mw.db;
 
 public class MVO {
 
-	private String m_idx, m_sns, m_id, m_email, m_nickname, m_profile_img, m_thumbnail_img, m_age_range, m_gender, m_regdate;
+	private String m_idx, m_sns, m_id, m_email, m_nickname, m_profile_img, m_age_range, m_gender, m_regdate;
 	
 	public MVO() { }
 
-	public MVO(String m_idx, String m_sns, String m_id, String m_email, String m_nickname, String m_profile_img,
-			String m_thumbnail_img, String m_age_range, String m_gender, String m_regdate) {
+	public MVO(String m_idx, String m_sns, String m_id, String m_email, String m_nickname, 
+			String m_profile_img, String m_age_range, String m_gender, String m_regdate) {
 		super();
 		this.m_idx = m_idx;
 		this.m_sns = m_sns;
@@ -15,7 +15,6 @@ public class MVO {
 		this.m_email = m_email;
 		this.m_nickname = m_nickname;
 		this.m_profile_img = m_profile_img;
-		this.m_thumbnail_img = m_thumbnail_img;
 		this.m_age_range = m_age_range;
 		this.m_gender = m_gender;
 		this.m_regdate = m_regdate;
@@ -67,14 +66,6 @@ public class MVO {
 
 	public void setM_profile_img(String m_profile_img) {
 		this.m_profile_img = m_profile_img;
-	}
-
-	public String getM_thumbnail_img() {
-		return m_thumbnail_img;
-	}
-
-	public void setM_thumbnail_img(String m_thumbnail_img) {
-		this.m_thumbnail_img = m_thumbnail_img;
 	}
 
 	public String getM_age_range() {

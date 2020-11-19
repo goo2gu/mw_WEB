@@ -1,17 +1,16 @@
 @charset "UTF-8";
 
-.wrap_all {
-	width: 100%;
-	margin: 5vw auto;
-}
-
-.mw_info_title {
-	font-family:'GmarketSansBold';
-	opacity: 0;
+article {
+	width: 87vw;
+	color: #444;
 	margin: 0 auto;
-	text-align: center;
+}
+article h2 {
+	font-family: 'GmarketSansBold';
+	font-size: 8vw;
 	color: #e8a761;
-	font-size: 5vw;
+	text-align: center;
+	margin: 5vw auto 0 auto;
 }
 
 .mw_info_context {
@@ -25,7 +24,7 @@
 	background-color: #e8a761;
 	border-radius: 10px;
 	line-height: 8vw;
-	width: 90vw;
+	width: 85vw;
 	height: 83vw;
 }
 
@@ -68,8 +67,11 @@
 }
 /* 576px 이상 tablet */
 @media ( min-width : 576px) {
-	.wrap_all {
+	.article {
 		margin: 3vw auto;
+	}
+	article h2 {
+		font-size: 7vw;
 	}
 	.mw_info_context {
 		margin: 3vw auto;
@@ -78,13 +80,13 @@
 
 /* 992px 이상 PC */
 @media ( min-width : 992px) {
-	.wrap_all {
-		width: 960px;
+	article {
+		width: 890px;
 		margin: 0 auto;
 	}
-	.mw_info_title {
-		margin-top: 24px;
-		font-size: 36px;
+	article h2 {
+		font-size: 64px;
+		margin: 24px auto 0 auto;
 	}
 	.mw_info_context {
 		width: 900px;

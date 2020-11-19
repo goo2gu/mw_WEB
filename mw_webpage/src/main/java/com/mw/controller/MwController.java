@@ -108,7 +108,6 @@ public class MwController {
 		mv.addObject("category", cat);
 		return mv;
 	}
-		
 	// 카테고리 > 마실거리
 	@RequestMapping("category_drink.do")
 	public ModelAndView categoryDrinkCommand(HttpServletRequest request) {
@@ -128,7 +127,6 @@ public class MwController {
 		mv.addObject("category", cat);
 		return mv;
 	}
-		
 	// 카테고리 > 즐길거리
 	@RequestMapping("category_play.do")
 	public ModelAndView categoryPlayCommand(HttpServletRequest request) {
@@ -166,7 +164,6 @@ public class MwController {
 		}
 		return mv;
 	}
-		
 	// 좋아요 버튼 처리
 	@RequestMapping("add_store_like.do")
 	public ModelAndView addStoreLikeCommand(HttpServletRequest request) {
@@ -496,7 +493,7 @@ public class MwController {
 	public ModelAndView adminQnaCommand(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("admin_qna");
 		try {
-			// 전체 게시물 수 (totalRecord)
+			// 전체 문의 게시물 수 (totalRecord)
 			int count = dao.getQnaTotal();
 			paging.setTotalRecord(count);
 			// 전체 페이지 수 (totalPage)

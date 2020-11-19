@@ -245,6 +245,7 @@
 		font-size: 20px;
 		padding: 8px 0 0px 10px;
 	}
+	.search-bar-click a:hover { color: #e8a761; }
 	.prev_search {
 		padding: 24px;
 		width: 330px;

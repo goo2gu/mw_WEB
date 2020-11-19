@@ -15,6 +15,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/qna_onelist.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function list_go() {
 		location.href = "qna.do";
@@ -47,10 +48,10 @@
 					</tr>
 				</tbody>
 			</table>
-			<div class="btn">
-				<input type="button" value="목록" onclick="list_go()">
-			</div>
 		</c:forEach>
+		<div class="btn">
+			<input type="button" value="목록" onclick="list_go()">
+		</div>
 	</article>
 </body>
 </html>

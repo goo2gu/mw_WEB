@@ -20,6 +20,7 @@
 <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
 <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous" ></script>
 <script type="text/javascript" src="http://kenwheeler.github.io/slick/slick/slick.min.js"></script>
+<!-- js -->
 <script type="text/javascript">
 	function searchBtn(f) {
 		// 유효성 검사
@@ -107,9 +108,9 @@
 				<div id="popUpContent" class="search-bar-click" style="display: none;">
 					<div class="want_search">
 						<h5>추천 검색어</h5>
-						<p>검색어1</p>
-						<p>검색어2</p>
-						<p>검색어3</p>
+						<p><a href="search.do?keyWord=마카롱">마카롱</a></p>
+						<p><a href="search.do?keyWord=닭발">닭발</a></p>
+						<p><a href="search.do?keyWord=혼밥">혼밥</a></p>
 					</div>
 				</div>
 			</div>

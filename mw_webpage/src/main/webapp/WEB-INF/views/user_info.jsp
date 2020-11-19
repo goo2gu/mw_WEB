@@ -26,7 +26,6 @@
 	<header>
 		<jsp:include page="top.jsp" />
 	</header>
-	
 	<article>
 		<h2>내 정보</h2>
 		<div class="addInfo">
@@ -46,7 +45,5 @@
 			</div>
 		</div>
 	</article>
-	
-
 </body>
 </html>

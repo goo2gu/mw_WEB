@@ -15,6 +15,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="/resources/css/category_drink.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/resetAll.css">
+<!-- js -->
 <script type="text/javascript">
 	function eat_go() { location.href = "category_eat.do?cat=먹을거리" }
 	function play_go() { location.href = "category_play.do?cat=즐길거리" }
@@ -24,8 +25,9 @@
 </head>
 
 <body>
-
-	<div id="top"> <jsp:include page="top.jsp" /> </div>
+	<header>
+		<jsp:include page="top.jsp" />
+	</header>
 	<div class="biggerCategory">
 		<div onclick="eat_go()">먹을거리</div>
 		<div class="bigChoice">마실거리</div>

@@ -38,14 +38,14 @@
 				<a href="https://kauth.kakao.com/oauth/authorize?client_id=eee202b1a78a56d2e53bd82554d2abcd&redirect_uri=http://localhost:8090/kakaoAdd.do&response_type=code&state=mjworld2020">
 					카카오 회원가입
 				</a>
-				&nbsp;|&nbsp;
+				<!-- &nbsp;|&nbsp;
 				<a href="https://kauth.kakao.com/oauth/authorize?client_id=eee202b1a78a56d2e53bd82554d2abcd&redirect_uri=http://localhost:8090/kakaoAdd.do&response_type=code&state=mjworld2020">
 					네이버 회원가입
 				</a>
 				&nbsp;|&nbsp;
 				<a href="https://kauth.kakao.com/oauth/authorize?client_id=eee202b1a78a56d2e53bd82554d2abcd&redirect_uri=http://localhost:8090/kakaoAdd.do&response_type=code&state=mjworld2020">
 					페이스북 회원가입
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</article>
