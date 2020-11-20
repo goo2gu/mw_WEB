@@ -16,7 +16,7 @@
 <!-- js -->
 <script type="text/javascript">
 	onload = function() {
-	    var pwd = "mjworld2020";
+	    var pwd = "secret";
 	    var getpwd = prompt("비밀번호를 입력하세요.");
 	    if(pwd == getpwd) {
 	        return;
